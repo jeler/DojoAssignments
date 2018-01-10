@@ -1,0 +1,12 @@
+.results {
+    border: 2px red;
+    margin-left: 300px;
+}
+.submission {
+    background-color: green;
+    color: white;
+    margin-left: 300px;
+    width: 500px;
+    vertical-align: top;
+    display: inline-block;
+}

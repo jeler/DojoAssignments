@@ -1,0 +1,35 @@
+/* * {
+    border: 1px solid green;
+} */
+h1 {
+    color: green;
+}
+.navbar h1 {
+    color: yellow;
+}
+.navbar p {
+    color: yellow;
+}
+.red {
+    color : red;
+}
+#blue {
+    color: blue;
+}
+.cool-list li {
+    color: purple;
+    display: inline-block;
+}
+p {
+    color:blue;
+}
+.container {
+    width: 1000px;
+    border: 1 px solid green;
+    padding: 15px;
+}
+h1 {
+    color: green;
+    margin-left: 355 px;
+
+}

@@ -1,0 +1,10 @@
+/Users/eler/Documents/DojoAssignments/C#/boxing/bin/Debug/netcoreapp2.0/boxing.deps.json
+/Users/eler/Documents/DojoAssignments/C#/boxing/bin/Debug/netcoreapp2.0/boxing.runtimeconfig.json
+/Users/eler/Documents/DojoAssignments/C#/boxing/bin/Debug/netcoreapp2.0/boxing.runtimeconfig.dev.json
+/Users/eler/Documents/DojoAssignments/C#/boxing/bin/Debug/netcoreapp2.0/boxing.dll
+/Users/eler/Documents/DojoAssignments/C#/boxing/bin/Debug/netcoreapp2.0/boxing.pdb
+/Users/eler/Documents/DojoAssignments/C#/boxing/obj/Debug/netcoreapp2.0/boxing.csproj.CoreCompileInputs.cache
+/Users/eler/Documents/DojoAssignments/C#/boxing/obj/Debug/netcoreapp2.0/boxing.AssemblyInfoInputs.cache
+/Users/eler/Documents/DojoAssignments/C#/boxing/obj/Debug/netcoreapp2.0/boxing.AssemblyInfo.cs
+/Users/eler/Documents/DojoAssignments/C#/boxing/obj/Debug/netcoreapp2.0/boxing.dll
+/Users/eler/Documents/DojoAssignments/C#/boxing/obj/Debug/netcoreapp2.0/boxing.pdb

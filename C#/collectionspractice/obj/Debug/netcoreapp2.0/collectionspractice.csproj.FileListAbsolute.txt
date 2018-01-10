@@ -1,0 +1,10 @@
+/Users/eler/Documents/DojoAssignments/C#/collectionspractice/bin/Debug/netcoreapp2.0/collectionspractice.deps.json
+/Users/eler/Documents/DojoAssignments/C#/collectionspractice/bin/Debug/netcoreapp2.0/collectionspractice.runtimeconfig.json
+/Users/eler/Documents/DojoAssignments/C#/collectionspractice/bin/Debug/netcoreapp2.0/collectionspractice.runtimeconfig.dev.json
+/Users/eler/Documents/DojoAssignments/C#/collectionspractice/bin/Debug/netcoreapp2.0/collectionspractice.dll
+/Users/eler/Documents/DojoAssignments/C#/collectionspractice/bin/Debug/netcoreapp2.0/collectionspractice.pdb
+/Users/eler/Documents/DojoAssignments/C#/collectionspractice/obj/Debug/netcoreapp2.0/collectionspractice.csproj.CoreCompileInputs.cache
+/Users/eler/Documents/DojoAssignments/C#/collectionspractice/obj/Debug/netcoreapp2.0/collectionspractice.AssemblyInfoInputs.cache
+/Users/eler/Documents/DojoAssignments/C#/collectionspractice/obj/Debug/netcoreapp2.0/collectionspractice.AssemblyInfo.cs
+/Users/eler/Documents/DojoAssignments/C#/collectionspractice/obj/Debug/netcoreapp2.0/collectionspractice.dll
+/Users/eler/Documents/DojoAssignments/C#/collectionspractice/obj/Debug/netcoreapp2.0/collectionspractice.pdb

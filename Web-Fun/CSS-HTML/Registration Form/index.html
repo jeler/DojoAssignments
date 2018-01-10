@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>My Registration Form</title>
+    </head>
+        <body>
+        <form action="process.php" method="post">
+            <h1>My Registration Form</h1>
+                <br>
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name">    
+                
+
+                <br>
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name">
+                
+
+                <br>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email">
+                
+                
+                <br>
+                <label for="password">Password</label>
+                <input type ="password" id="password" name="password">
+                
+
+                <br>
+                <label for="password">Password Confirmation</label>
+                <input type="password" id="pw_confirm" name="password_confirmation">
+                
+
+                <br>
+                <label for="birthday">Birthday</label>
+                <input type="date" id="birthday" name="birthday">
+                
+
+                <br>
+                <label for="male">Male</label>
+                <input type="radio" id="male" name="gender" value="male">
+            
+                <label for="female">Female</label>
+                <input type="radio" id="female" name="gender" value="female">
+            
+                <label for="other">Other</label>
+                <input type="radio" id="other" name="gender" value="other">
+                
+        
+                <p>A short description of yourself</p>
+                <textarea name="description"></textarea>
+
+                <br>
+                <p>Favorite Language</p>
+                <select>
+                    <option value="Javascript">Javascript</option>
+                    <option value="PHP">Java</option>
+                    <option value="Python">CoffeeScript</option>
+                    <option value="C#">C#</option>
+                    <option value="C++">C++</option>
+                </select>
+                <br>
+                <input type="submit" value="Submit">
+        </form>      
+        </body>
+</html>

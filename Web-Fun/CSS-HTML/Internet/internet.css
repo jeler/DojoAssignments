@@ -1,0 +1,147 @@
+.container {
+    width: 1000px;
+    height: 1000px;
+}
+.header {
+
+}
+.header img {
+    width: 10%;
+}
+.header h1 {
+    display: inline-block;
+    margin-bottom: 0px;
+    padding: 0px;
+    vertical-align: top;
+    color: grey;
+    font-size: 35pt;
+}
+.world-wide {
+    display: inline-block;
+    width: 1000px;
+    background-color: #3F77A6;
+    color: white;
+    font-size: 20pt;
+    margin: 0px;
+    padding: 15px;
+}
+.nav-bar {
+    margin-top: 5px;
+    width: 200px;
+    display: inline-block;
+}
+.nav-bar h4 {
+    margin: 10px 0px 0px 0px;
+    padding: 0px;
+}
+.nav-bar p {
+    margin: 5px 0px 0px 0px;
+    padding: 0px;
+}
+.internet-red {
+    color: red;
+}
+.buttons {
+    width: 200px;
+    margin: 0px;
+}
+.buttons p {
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 10pt;
+    width: 134px;
+    vertical-align: top;
+    display: block;
+    color: white;
+    font-size: 10pt;
+    width: 134px;
+}
+.video {
+    background-color: #3F77A6;
+}
+.resources {
+    background-color: orange;
+}
+.ninja {
+    background-image: url("ad_background.png");
+    display: block;
+}
+.ninja h4 {
+    margin: 40px 0px 0px 30px;
+    padding: 10px;
+    color: white;
+    font-size: 15pt;
+}
+.ninja img {
+    width: 45%;
+    margin: 0px 0px 0px 30px;
+}
+.learn {
+    background-color: #3F77A6;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: top;
+}
+.banner {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0px 0px 0px 0px;
+}
+.banner p {
+    margin: 0px;
+    padding: 0px;
+    color: #3F77A6;
+    display: inline-block;
+    vertical-align: top;
+}
+.home {
+    height: 15px;
+    width: 15px;
+    margin-bottom: 50px;
+}
+.contact {
+    vertical-align: top;
+    display: inline-block;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+.hours {
+    color: grey;
+    font-size: 8pt;
+}
+.number {
+    display: inline-block;
+    color: #01C0DF;
+    font-size: 16pt;
+    font-weight: bold;
+}
+.phone-icon {
+    width: 30px;
+    height: 30px;
+    margin-left: 450px;
+    margin-top: 10px;
+}
+.international {
+    color: grey;
+    vertical-align: top;
+    font-size: 8pt;
+}
+.contact-info {
+    display: inline-block;
+    vertical-align:top;
+    width: 710px;
+    border-bottom: 5px grey solid;
+}
+.main-content {
+    display: inline-block;
+    vertical-align: top;
+    width: 780px;
+}
+.main-content h3 {
+    padding: 0px;
+    margin: 0px;
+    display: inline-block;
+    vertical-align: top;
+
+}

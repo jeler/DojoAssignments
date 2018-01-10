@@ -1,0 +1,7 @@
+<h5>Random word (attempt # {{request.session.counter}})</h5>
+<form action = "/guess" method = "post">
+    {% csrf_token %}
+    <input type="text" value="{{random_word}}"></input>
+    <input type="Submit" value="generate">
+</form>
+<a href="/reset"><button>Reset!</button></a>

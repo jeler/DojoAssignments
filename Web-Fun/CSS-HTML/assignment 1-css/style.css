@@ -1,0 +1,45 @@
+*{
+ margin: 0px;
+ padding: 0px;
+}
+#wrapper{
+ width: 950px;
+ background-color: silver;
+ margin: 0px auto; 
+ padding: 20px; /* added */
+}
+#header{
+ height: 150px;
+ background-color: green;
+}
+#navigation{
+ height: 300px;
+ width: 200px;
+ background-color: blue;
+ display: inline-block; 
+ margin-left: 10px; /* added */
+ margin-top: 20px; /* added */
+}
+#main_content{
+ height: 400px;
+ width: 690px;
+ background-color: red;
+ display: inline-block; /* added */
+ margin-left: 25px; /* added */
+ vertical-align: top; /* added */
+ margin-top: 20px; /* added */
+ padding: 10px; /* added */
+}
+.subcontents{
+ height: 175px; /* added */
+ width: 175px; /* added */
+ background-color: yellow;
+ margin: 25px; /* added */
+ display: inline-block; /* added */
+}
+#advertisement{
+ height: 120px;
+ width: 640px; /* added */
+ background-color: purple;
+ margin-left: 24px; /* added */
+}

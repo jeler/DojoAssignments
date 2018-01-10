@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninja Money</title>
+</head>
+<body>
+    <p>Your Gold: {{session['user_gold']}}</p>
+    <h3>Farm</h3>
+    <h4>(earns 10-20 gold)</h4>
+    <form action="/process_money" method = "post">
+        <input type="hidden" name="building" value="farm">
+        <input type="submit" value="Find Gold">
+    </form>
+    <h3>Cave</h3>
+    <h4>(earns 5-10 gold)</h4>
+    <form action="/process_money" method = "post">
+        <input type="hidden" name="building" value="cave">
+        <input type="submit" value="Find Gold">
+    </form>
+    <h3>House</h3>
+    <h4>(earns 2-5 gold)</h4>
+    <form action="/process_money" method = "post">
+        <input type="hidden" name="building" value="house">
+        <input type="submit" value="Find Gold">
+    </form>
+    <h3>Casino</h3>
+    <h4>(earns/takes 0-50 gold)</h4>
+    <form action="/process_money" method = "post">
+        <input type="hidden" name="building" value="casino">
+        <input type="submit" value="Find Gold">
+    </form>
+    <h5>Activities</h5>
+    {% for message in session['messages'] %}
+    <p>{{ message }}</p>
+    {% endfor %}
+    <a href="/reset">
+        <button>Reset</button>
+    </a>
+</body>
+</html>

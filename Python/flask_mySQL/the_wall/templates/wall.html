@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Successful Login</title>
+</head>
+<body>
+<h3>Coding Dojo Wall</h3>
+Welcome {{welcome_name}} <a href="/logout"><button>Logout</button></a>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<h4>Post a Message</h4>
+<!-- <textarea rows ="4" cols="50"></textarea> -->
+<form action="/messagepost" method = 'post'>
+    <input type="text" name ="message">
+    <input type="submit" value="Post a message">
+</form>
+{% for message in messages: %}
+<p>{{message['name']}} {{message['date']}}</p>
+{{message['message']}}
+{% end for% }
+<br><br>
+<form action="/commentpost" method = 'post'>
+    <h4>Post a Comment</h4>
+    <input type="text" name ="comment">
+    <input type="submit" value="Post a comment">
+    <input type="hidden" name ="message_id" value="{{message['id']}}"> 
+    <!-- passes message id when users comments -->
+</form>  
+    {% for comment in comments: %}
+    <p>{{comment['name']}} {{comment['comment']}}</p>
+        {{comment['comment']}}
+    {%endfor%}
+{%endfor%}  
+</body>
+</html>

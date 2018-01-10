@@ -1,0 +1,11 @@
+.header {
+    margin: 0px;
+    padding: 0px 10px 0px 10px;
+}
+.hr {
+    border: 5px;
+}
+.survey {
+    display: block;
+    vertical-align: top;
+}

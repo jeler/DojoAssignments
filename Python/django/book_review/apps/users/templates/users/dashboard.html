@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Books Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+            <div class="row align-items-start">
+                <div class="col-12 col-md-8">
+                    <h2>Welcome {{specific_user.name}}!</h2>
+                </div>
+                <div class="col-6 col-md-4">
+                <a href="/books/add">Add Book and Review |   </a><a href="/logout">Log Out</a>
+                </div>
+            </div>
+            <div class="row justify-content-between">
+                <div class="col-4">
+                    <h3>Recent Book Reviews</h3>
+                    {% for content in book_reviews|slice:":3" %}
+                        <h5><a href="books/{{content.books.id}}">{{content.books.book_title}}</a></h5>
+                        <p>Rating: {{content.rating}}</p>
+                        <p><a href="users/{{content.user_book_review.id}}">{{content.user_book_review.name}}</a> says: {{content.review}}</p>
+                        <p>Posted on {{content.created_at}}</p>
+                    {% endfor %}
+                </div>
+                <div class="col-4">
+                    <h3>Other Books with Reviews</h3>
+                    {% for info in other_books_with_reviews %}
+                        <p><a href="books/{{info.id}}">{{info.book_title}}</a></p>
+                    {% endfor %}
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    {% endif %}
+                    </ul>       
+                </div>
+            </div>
+        </body>
+        </html>

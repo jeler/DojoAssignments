@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Courses</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="col">
+            <h3>Add a New Course</h3>
+            <form class="" action="{% url 'course:add_course' %}" method="post">
+                {% csrf_token %} 
+                Name: <input type="text" name="name">
+                <br><br>
+                Description: <input type="text" name="description">
+                <br><br>
+                <input type="submit">
+            </form>
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                {% endif %}
+                </ul>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Course Name</th>
+                            <th>Description</th>
+                            <th>Date Added</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for info in all_courses %}
+                        <tr>
+                            <td>{{info.name}}</td>
+                            <td>{{info.description}}</td>
+                            <td>{{info.created_at}}</td>
+                            <td><a href="/courses/destroy/{{info.id}}">Remove</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+        </div>
+    </div>    
+</body>
+</html>

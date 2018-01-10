@@ -1,0 +1,69 @@
+.container {
+    width: 1000px;
+    border: 1px solid black;
+}
+.header {
+    background-color: blue;
+    padding: 20px 0px 0px 100px;
+}
+.header h1 {
+    margin: 0px, 0px, 0px, 100px;
+    color: white;
+    display: inline-block;
+}
+.input-field {
+    display: inline-block;
+    color: white;
+    vertical-align: top;
+}
+.input-field input {
+    display: block;
+}
+.input-field a {
+    color: white;
+}
+.first-field {
+    margin-left: 300px;
+}
+.header button {
+    background-color: blue;
+    color: white;
+    vertical-align: top;
+    margin-top: 15px;
+}
+.main-content {
+    background-color: silver;
+    height: 500px;
+    padding: 25px 100px 0px 100px;
+}
+.connect {
+    width: 450px;
+    display: inline-block;
+
+}
+.connect h2 {
+    margin: 0px;
+}
+.connect ul {
+    list-style-type: none;
+    padding: 0px;
+}
+.connect span {
+    font-weight: bold;
+}
+.sign-up {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 0px;
+    height: 500px;
+    width: 450px;
+
+}
+.free h2 {
+    vertical-align: top;
+    display: inline-block;
+    margin: 0px;
+}
+.free h3 {
+    margin: 0px;
+}

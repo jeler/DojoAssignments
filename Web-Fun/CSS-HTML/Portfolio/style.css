@@ -1,0 +1,19 @@
+.container {
+    background-color: #523E46;
+    height: 1000px;
+    width: 1000px;
+}
+.header {
+    display: inline-block;
+    height: 75px;
+    width: 1000px;
+    background-color: white;
+}
+
+.header h1 {
+    display: inline-block;
+} 
+.header h2 {
+    margin-left: 480px;
+    display: inline-block;
+}

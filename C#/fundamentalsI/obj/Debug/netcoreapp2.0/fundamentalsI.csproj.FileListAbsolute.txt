@@ -1,0 +1,10 @@
+/Users/eler/Documents/DojoAssignments/C#/fundamentalsI/obj/Debug/netcoreapp2.0/fundamentalsI.csproj.CoreCompileInputs.cache
+/Users/eler/Documents/DojoAssignments/C#/fundamentalsI/obj/Debug/netcoreapp2.0/fundamentalsI.AssemblyInfoInputs.cache
+/Users/eler/Documents/DojoAssignments/C#/fundamentalsI/obj/Debug/netcoreapp2.0/fundamentalsI.AssemblyInfo.cs
+/Users/eler/Documents/DojoAssignments/C#/fundamentalsI/bin/Debug/netcoreapp2.0/fundamentalsI.deps.json
+/Users/eler/Documents/DojoAssignments/C#/fundamentalsI/bin/Debug/netcoreapp2.0/fundamentalsI.runtimeconfig.json
+/Users/eler/Documents/DojoAssignments/C#/fundamentalsI/bin/Debug/netcoreapp2.0/fundamentalsI.runtimeconfig.dev.json
+/Users/eler/Documents/DojoAssignments/C#/fundamentalsI/bin/Debug/netcoreapp2.0/fundamentalsI.dll
+/Users/eler/Documents/DojoAssignments/C#/fundamentalsI/bin/Debug/netcoreapp2.0/fundamentalsI.pdb
+/Users/eler/Documents/DojoAssignments/C#/fundamentalsI/obj/Debug/netcoreapp2.0/fundamentalsI.dll
+/Users/eler/Documents/DojoAssignments/C#/fundamentalsI/obj/Debug/netcoreapp2.0/fundamentalsI.pdb

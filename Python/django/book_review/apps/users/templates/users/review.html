@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Book and Review</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-end">
+            <a href="/books">Home |   </a> <a href="/logout">Logout</a>
+        </div>
+        <h3>Add a New Book Title and a Review</h3>
+        <form class= "" action="{% url 'users:book_review_process' %}" method = "post">
+            {% csrf_token %} 
+            <p>Book Title:</p> <input type="text" name="book_title"></input>
+            <p>Choose from the List: </p>
+            <select name="existing_author"> 
+                <option value=""></option>
+                {% for info in author_data %} 
+                <option value="{{info.author}}">
+                    {{info.name}}
+                </option> 
+                {% endfor %}
+            </select>
+            <!-- populate above line with authors in database -->
+            <p>Or add a new author:</p> <input type="text" name="new_author"></input>
+            <p>Review:</p> <input type="text" name="review"></input>
+            <p>Rating: </p><select name ="rating">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>                
+                </select>
+                <br><br>
+                <input type="submit" value="Add Book and Review">
+                <br><br>
+                <input type="hidden" name="user_id" value="{{specific_user.id}}">
+            </form>
+        {% if messages %}        
+        <ul class="messages">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        {% endif %}
+        </ul>   
+    </div>
+</body>
+</html>

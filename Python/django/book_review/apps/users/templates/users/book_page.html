@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-end">
+            <a href="/books">Home |   </a> <a href="/logout">Logout</a>
+        </div>
+        {% for info in book_data %}
+        <h3>{{info.book_title}}</h3>
+        <p>{{info.writer.name}}</p>
+        {% endfor %}
+            <div class="row">
+                <div class="col-6">
+                    <h3>Reviews</h3>
+                    {% for info in reviews %}
+                        <p>Rating: {{info.rating}}</p>
+                        <p><a href="/users/{{info.user_book_review.id}}">{{info.user_book_review.name}}</a> says: {{info.review}}</p>
+                        <p>Posted on {{info.created_at}}</p>
+                        {% if info.user_book_review.id == request.session.id %}
+                            <a href="/delete/{{info.id}}">Delete</a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="col-6">
+                    <h3>Add a Review</h3>
+                    <div class="form-group">
+                        <form class= "" action="{% url 'users:add_review_from_page_process' %}" method = "post">
+                            {% csrf_token %}
+                            <input type="text" name="review" size="50">
+                            <p>Rating: </p>
+                            <select name ="rating">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>                
+                                </select>
+                                <br><br>
+                            <input type="submit">
+                            <input type="hidden" name="user_id" value="{{specific_user.id}}">
+                            {% for info in book_data %}
+                            <input type="hidden" name="book_id" value="{{info.id}}">
+                            {% endfor %}
+                        </form>
+                        {% if messages %}        
+                        <ul class="messages">
+                            {% for message in messages %}
+                                <li>{{ message }}</li>
+                            {% endfor %}
+                        {% endif %}
+                        </ul>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

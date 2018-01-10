@@ -1,0 +1,10 @@
+/Users/eler/Documents/DojoAssignments/C#/basic13/bin/Debug/netcoreapp2.0/basic13.deps.json
+/Users/eler/Documents/DojoAssignments/C#/basic13/bin/Debug/netcoreapp2.0/basic13.runtimeconfig.json
+/Users/eler/Documents/DojoAssignments/C#/basic13/bin/Debug/netcoreapp2.0/basic13.runtimeconfig.dev.json
+/Users/eler/Documents/DojoAssignments/C#/basic13/bin/Debug/netcoreapp2.0/basic13.dll
+/Users/eler/Documents/DojoAssignments/C#/basic13/bin/Debug/netcoreapp2.0/basic13.pdb
+/Users/eler/Documents/DojoAssignments/C#/basic13/obj/Debug/netcoreapp2.0/basic13.csproj.CoreCompileInputs.cache
+/Users/eler/Documents/DojoAssignments/C#/basic13/obj/Debug/netcoreapp2.0/basic13.AssemblyInfoInputs.cache
+/Users/eler/Documents/DojoAssignments/C#/basic13/obj/Debug/netcoreapp2.0/basic13.AssemblyInfo.cs
+/Users/eler/Documents/DojoAssignments/C#/basic13/obj/Debug/netcoreapp2.0/basic13.dll
+/Users/eler/Documents/DojoAssignments/C#/basic13/obj/Debug/netcoreapp2.0/basic13.pdb

@@ -1,0 +1,24 @@
+.container {
+    background-color: #DDDFD4;
+    height: 1000px;
+    width: 1000px;
+}
+.header {
+    background-color: #38B0AD;
+    padding: 5px;
+}
+.git {
+    display:inline-block;
+    vertical-align: top;
+}
+.git-logo {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+}
+.header p {
+    display: inline-block;
+    color: white;
+    margin-left: 15px;
+    padding: 0px;3
+}

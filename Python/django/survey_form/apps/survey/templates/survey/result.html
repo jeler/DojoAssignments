@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'survey/css/result.css' %}" media="screen" title="no title"  charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
+    <title>Submitted Data!</title>
+</head>
+<body>
+    <div class="container">
+        <div class="submission">
+            <p>Thanks for submitting this form! You have submitted 
+                this form {{request.session.counter}} times now!</p>
+        </div>
+        <div class="results">
+            <p>First Name: {{request.session.results.first_name}}</p>
+            <P>Dojo Location: {{request.session.results.location}}</p>
+            <p>Favorite Language: {{request.session.results.language}}</p>
+            <p>Comment: {{request.session.results.comment}}</p>
+        </div>
+    </div>
+</body>
+</html>
