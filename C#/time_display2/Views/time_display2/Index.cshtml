@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset='utf-8'>
+            <title>Current Date/Time</title>
+        </head>
+        <body>
+            @{
+                DateTime CurrentTime = DateTime.Now;
+                <h1>The Current/Date Time is:</h1>
+                string format = "MMM ddd d HH:mm yyyy";
+                var currentdate = CurrentTime.ToLongDateString();
+                <h3>@currentdate</h3>
+                var currenttime = CurrentTime.ToShortTimeString();
+                <p>@currenttime</p>
+                
+            }
+        </body>
+    </html>

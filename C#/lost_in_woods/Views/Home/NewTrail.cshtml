@@ -1,0 +1,28 @@
+@model lost_in_woods.Models.Hike
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <h2>Add a New Trail</h2> 
+        </div>
+        <div class="col-md-3">
+            <a href="/lostinthewoods">Go Home</a>
+        </div>
+    </div>
+    <form asp-controller="Home" asp-action="CreateHike" method="post">
+        <p>Trail Name:</p>
+        <input asp-for="Name">
+        <p>Description:</p>
+        <textarea rows="4" cols ="50" input asp-for="Description"></textarea>
+        <p>Trail Length:</p>
+        <input asp-for="Length">
+        <p>Elevation Change:</p>
+        <input asp-for="Elevation">
+        <p>Longitude & Latitude:</p> <input asp-for="Latitude"> <input asp-for="Longitude">
+        <br><br>
+        <p><button type="submit" class="btn btn-primary"> Create Record!</button></p>
+        <div asp-validation-summary="All"></div>   
+    </form>
+</div>

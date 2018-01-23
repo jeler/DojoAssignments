@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Quoting Dojo";
+}
+<h1>Welcome to Quoting Dojo</h1>
+<form action="quotes" method="post">
+    <p>Name</p> <input type="text" name="NameField">
+    <p>Your Quotes</p><input type="text" name="QuoteField">
+    <br><br>
+    <p><input type="submit" value="Add my quote!"></p>
+    <button><a href="/quotes">Skip to Quotes!</a></button>
+</form>
+ @{  if(ViewBag.errors != null) {
+    foreach(var error in ViewBag.errors) {
+        <p>@error</p>
+        }
+    }
+}

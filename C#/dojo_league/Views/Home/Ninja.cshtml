@@ -1,0 +1,65 @@
+@model dojo_league.Models.Ninja
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Registered Ninjas</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Ninja Name</th>
+                        <th>Ninja Dojo</th>
+                    </tr>
+                </thead>
+                @{
+                    <tbody>
+                    @foreach(var item in ViewBag.ninjas) {
+                        <tr>
+                        <td><a href="/Ninjas/@item.id">@item.name</a></td>
+                        <td><a href="/Dojos/@item.dojos_id">@item.dojoname</a></td>
+                        </tr>
+                    }
+                    </tbody>
+                }
+            </table>
+        </div>
+        <div class="col">
+            <h2>Register a Ninja</h2>
+            <form asp-controller="Home" asp-action="ninjaprocess" method="post">
+                <p>Ninja Name:</p>
+                <input asp-for="name">
+                <p>Ninjaing Level:</p>
+                <select asp-for="level">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>                                                                                                                                                                                    
+                </select>
+                <p>Assigned Dojo:</p>
+                <select asp-for="dojos_id">
+                    <option value="0">Rogue</option>
+                @{
+                    foreach(var dojo in ViewBag.dojos_list) {
+                        <option value="@dojo.id">@dojo.name</option>
+                    }
+
+                }
+                </select>
+                <p>Optional Description</p>
+                <textarea rows="4" cols ="50" input asp-for="description"></textarea>
+                <br><br>
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+</div>

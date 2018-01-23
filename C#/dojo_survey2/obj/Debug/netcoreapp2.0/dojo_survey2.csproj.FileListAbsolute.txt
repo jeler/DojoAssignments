@@ -1,0 +1,10 @@
+/Users/eler/Documents/DojoAssignments/C#/dojo_survey2/bin/Debug/netcoreapp2.0/dojo_survey2.deps.json
+/Users/eler/Documents/DojoAssignments/C#/dojo_survey2/bin/Debug/netcoreapp2.0/dojo_survey2.runtimeconfig.json
+/Users/eler/Documents/DojoAssignments/C#/dojo_survey2/bin/Debug/netcoreapp2.0/dojo_survey2.runtimeconfig.dev.json
+/Users/eler/Documents/DojoAssignments/C#/dojo_survey2/bin/Debug/netcoreapp2.0/dojo_survey2.dll
+/Users/eler/Documents/DojoAssignments/C#/dojo_survey2/bin/Debug/netcoreapp2.0/dojo_survey2.pdb
+/Users/eler/Documents/DojoAssignments/C#/dojo_survey2/obj/Debug/netcoreapp2.0/dojo_survey2.csproj.CoreCompileInputs.cache
+/Users/eler/Documents/DojoAssignments/C#/dojo_survey2/obj/Debug/netcoreapp2.0/dojo_survey2.AssemblyInfoInputs.cache
+/Users/eler/Documents/DojoAssignments/C#/dojo_survey2/obj/Debug/netcoreapp2.0/dojo_survey2.AssemblyInfo.cs
+/Users/eler/Documents/DojoAssignments/C#/dojo_survey2/obj/Debug/netcoreapp2.0/dojo_survey2.dll
+/Users/eler/Documents/DojoAssignments/C#/dojo_survey2/obj/Debug/netcoreapp2.0/dojo_survey2.pdb

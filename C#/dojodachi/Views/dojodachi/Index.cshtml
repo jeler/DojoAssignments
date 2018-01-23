@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset='utf-8'>
+            <title>Dojodachi</title>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+        </head>
+        <body>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h4>Fullness: @TempData["fullness"]</h4>
+                    </div>
+                    <div class="col">
+                        <h4>Happiness: @TempData["happiness"]</h4>
+                    </div>
+                    <div class="col">                    
+                        <h4>Meal: @TempData["meal"]</h4>
+                    </div>
+                    <div class="col">
+                        <h4>Energy: @TempData["energy"]</h4>                        
+                    </div>
+                </div>
+                        @{ @if (@ViewBag.Game == true) {
+                <div class="row">
+                    <div class="col">
+                        <form action="processfeed" method="post">
+                            <input type="submit" value="feed">
+                            <input type="hidden" name="action" value="feed">
+                        </form>
+                    </div>
+                    <div class="col">
+                        <form action="processplay" method="post">
+                            <input type="submit" value="play">
+                            <input type="hidden" name="action" value="play">
+                        </form>
+                    </div>
+                    <div class="col">
+                        <form action="processwork" method="post">
+                            <input type="submit" value="work">
+                            <input type="hidden" name="action" value="work">
+                        </form>
+                    </div>
+                    <div class="col">
+                        <form action="processsleep" method="post">
+                            <input type="submit" value="work">
+                            <input type="hidden" name="action" value="sleep">
+                        </form>
+                    </div>
+                </div>
+                        }
+                    }
+                <div class="row">
+                    <h2>@TempData["message"]</h2>
+                </div>
+                @{ @if (@ViewBag.Game == false) {
+                <div class="row">
+                    <a href="/reset">Restart?</a>
+                </div>
+                }
+            }
+            </div>
+        </body>
+    </html>

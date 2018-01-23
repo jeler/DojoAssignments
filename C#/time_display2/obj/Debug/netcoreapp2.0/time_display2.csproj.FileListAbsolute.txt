@@ -1,0 +1,10 @@
+/Users/eler/Documents/DojoAssignments/C#/time_display2/bin/Debug/netcoreapp2.0/time_display2.deps.json
+/Users/eler/Documents/DojoAssignments/C#/time_display2/bin/Debug/netcoreapp2.0/time_display2.runtimeconfig.json
+/Users/eler/Documents/DojoAssignments/C#/time_display2/bin/Debug/netcoreapp2.0/time_display2.runtimeconfig.dev.json
+/Users/eler/Documents/DojoAssignments/C#/time_display2/bin/Debug/netcoreapp2.0/time_display2.dll
+/Users/eler/Documents/DojoAssignments/C#/time_display2/bin/Debug/netcoreapp2.0/time_display2.pdb
+/Users/eler/Documents/DojoAssignments/C#/time_display2/obj/Debug/netcoreapp2.0/time_display2.csproj.CoreCompileInputs.cache
+/Users/eler/Documents/DojoAssignments/C#/time_display2/obj/Debug/netcoreapp2.0/time_display2.AssemblyInfoInputs.cache
+/Users/eler/Documents/DojoAssignments/C#/time_display2/obj/Debug/netcoreapp2.0/time_display2.AssemblyInfo.cs
+/Users/eler/Documents/DojoAssignments/C#/time_display2/obj/Debug/netcoreapp2.0/time_display2.dll
+/Users/eler/Documents/DojoAssignments/C#/time_display2/obj/Debug/netcoreapp2.0/time_display2.pdb

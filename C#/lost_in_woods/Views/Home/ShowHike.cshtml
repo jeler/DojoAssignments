@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <h1>@ViewBag.hikes.Name</h1>
+        </div>
+        <div class="col-md-3">
+            <a href="/lostinthewoods">Go Home</a>
+        </div>
+    </div>
+    <div class="col">
+        <h3>Description</h3>
+        <p>@ViewBag.hikes.Description</p>
+        <h3>Trail Length</h3>
+        <p>@ViewBag.hikes.Length</p>
+        <h3>Elevation Change</h3>
+        <p>@ViewBag.hikes.Elevation</p>
+    </div>
+    <div class="row justify-content-end">
+        <p>Longitude: @ViewBag.hikes.Longitude</p> |  <p>Latitude: @ViewBag.hikes.Latitude</p>
+    </div>
+</div>

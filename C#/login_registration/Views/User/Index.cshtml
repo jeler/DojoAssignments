@@ -1,0 +1,44 @@
+@model login_registration.Models.UserViewModels
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Login</h2>
+            <form asp-controller="User" asp-action="Login" method="post">
+                <p>Email Address:</p>
+                <input asp-for="Log.Email">
+                <p>Password:</p>
+                <input asp-for="Log.Password">
+                <br><br>
+                <button type="Submit">Login</button>
+            </form>
+        </div>
+        <div class="col">
+            <h2>Registration</h2>
+            <!-- Will work if render view on Register -->
+            <form asp-controller="User" asp-action="Register" method="post">
+                <!-- <span asp-validation-for="Reg.First_Name"></span> -->
+                <p>First Name:</p>
+                <input asp-for="Reg.First_Name">
+                <p>Last Name:</p>
+                <!-- <span asp-validation-for="Reg.Last_Name"></span> -->
+                <input asp-for="Reg.Last_Name">
+                <p>Email Address</p>
+                <!-- <span asp-validation-for="Reg.Email"></span> -->
+                <input asp-for="Reg.Email"> 
+                <p>Password</p>
+                <!-- <span asp-validation-for="Reg.Password"></span> -->
+                <input asp-for="Reg.Password">
+                <p>Password Confirmation</p>
+                <!-- <span asp-validation-for="Reg.PasswordConfirmation"></span> -->
+                <input asp-for="Reg.PasswordConfirmation">                
+                <br><br>
+                <button type="Submit">Register</button>
+                <div asp-validation-summary="All"></div>
+            </form>
+        </div>
+    </div>
+</div>

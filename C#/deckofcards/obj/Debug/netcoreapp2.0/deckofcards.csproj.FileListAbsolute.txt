@@ -1,0 +1,10 @@
+/Users/eler/Documents/DojoAssignments/C#/deckofcards/bin/Debug/netcoreapp2.0/deckofcards.deps.json
+/Users/eler/Documents/DojoAssignments/C#/deckofcards/bin/Debug/netcoreapp2.0/deckofcards.runtimeconfig.json
+/Users/eler/Documents/DojoAssignments/C#/deckofcards/bin/Debug/netcoreapp2.0/deckofcards.runtimeconfig.dev.json
+/Users/eler/Documents/DojoAssignments/C#/deckofcards/bin/Debug/netcoreapp2.0/deckofcards.dll
+/Users/eler/Documents/DojoAssignments/C#/deckofcards/bin/Debug/netcoreapp2.0/deckofcards.pdb
+/Users/eler/Documents/DojoAssignments/C#/deckofcards/obj/Debug/netcoreapp2.0/deckofcards.csproj.CoreCompileInputs.cache
+/Users/eler/Documents/DojoAssignments/C#/deckofcards/obj/Debug/netcoreapp2.0/deckofcards.AssemblyInfoInputs.cache
+/Users/eler/Documents/DojoAssignments/C#/deckofcards/obj/Debug/netcoreapp2.0/deckofcards.AssemblyInfo.cs
+/Users/eler/Documents/DojoAssignments/C#/deckofcards/obj/Debug/netcoreapp2.0/deckofcards.dll
+/Users/eler/Documents/DojoAssignments/C#/deckofcards/obj/Debug/netcoreapp2.0/deckofcards.pdb

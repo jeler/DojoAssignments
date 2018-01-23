@@ -98,6 +98,7 @@ namespace basic13
                 Console.WriteLine(max);
                 Console.WriteLine(min);
                 Console.WriteLine("Average is" + avg);
+                Console.WriteLine("{0},{1},{2}",max,min,avg);
         }
         public static void ShiftArray(int [] arr) {
             for (int i =0; i< arr.Length-1; i++) {
@@ -148,10 +149,10 @@ namespace basic13
             // GreaterThanY(new int[] {1, 3, 5, 7}, 3);
             // SquareValues(new int[] {1, 5, 10, -2});
             // NoNegs(new int[] {1, 5, 10, -2});
-            // MinMaxAvg(new int[] {1, 5, 10, -2});
+            MinMaxAvg(new int[] {1, 5, 10, -2});
             // ShiftArray(new int[] {1, 5, 10, 7, -2});
             // NumberToString(new object[] {-1, -3, 2});
-            numToString(new object[] {-1, -3, 2});
+            // numToString(new object[] {-1, -3, 2});
         }
     }
 }

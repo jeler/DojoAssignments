@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Quoting Dojo";
+}
+
+<h1>This is Quotes!</h1>
+<!-- @ViewBag.name -->
+@{
+    foreach(var user in @ViewBag.quotes) {
+        <h3>"@user["quote"]"</h3>
+        <hr>
+        <p>@user["name"] at @user["created_at"];</p>
+    }
+}
+<button><a href="/">Back to Adding Quote Page!</a></button>

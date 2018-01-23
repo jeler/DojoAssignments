@@ -1,0 +1,10 @@
+/Users/eler/Documents/DojoAssignments/C#/simple_crud/bin/Debug/netcoreapp2.0/simple_crud.deps.json
+/Users/eler/Documents/DojoAssignments/C#/simple_crud/bin/Debug/netcoreapp2.0/simple_crud.runtimeconfig.json
+/Users/eler/Documents/DojoAssignments/C#/simple_crud/bin/Debug/netcoreapp2.0/simple_crud.runtimeconfig.dev.json
+/Users/eler/Documents/DojoAssignments/C#/simple_crud/bin/Debug/netcoreapp2.0/simple_crud.dll
+/Users/eler/Documents/DojoAssignments/C#/simple_crud/bin/Debug/netcoreapp2.0/simple_crud.pdb
+/Users/eler/Documents/DojoAssignments/C#/simple_crud/obj/Debug/netcoreapp2.0/simple_crud.csproj.CoreCompileInputs.cache
+/Users/eler/Documents/DojoAssignments/C#/simple_crud/obj/Debug/netcoreapp2.0/simple_crud.AssemblyInfoInputs.cache
+/Users/eler/Documents/DojoAssignments/C#/simple_crud/obj/Debug/netcoreapp2.0/simple_crud.AssemblyInfo.cs
+/Users/eler/Documents/DojoAssignments/C#/simple_crud/obj/Debug/netcoreapp2.0/simple_crud.dll
+/Users/eler/Documents/DojoAssignments/C#/simple_crud/obj/Debug/netcoreapp2.0/simple_crud.pdb

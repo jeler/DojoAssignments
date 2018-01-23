@@ -1,0 +1,61 @@
+@{
+    ViewData["Title"] = "Success";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <p>Coding Dojo Wall</p>
+        </div>
+        <div clas="col-md-2">
+            @{ 
+                foreach(var info in ViewBag.user_info) {
+                <p>Welcome @info["first_name"]</p>
+                }
+            }
+ 
+        </div>
+        <div class="col-md-1">
+            <button><a href="/logout">Logout</a></button>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <h2>Post a Message</h2>
+        <br><br> 
+    </div>
+    <div class="row">
+        <form action ="/messageprocess" method="post">
+            <textarea name="Message_Field" rows="4" cols ="50"></textarea>
+            <p><button type="submit" class="btn btn-primary"> Post a Message</button></p>
+            <input type="hidden" name="user_id" value="@TempData["id"]">
+        </form>
+    </div>
+        <h2 class="text-danger">@TempData["message_errors"]</h2>
+    <div class="col">
+        @{
+            foreach(var message in ViewBag.join_message_query) 
+            {
+                <h2>@message["name"] - @message["DATE"].ToString("D")</h2>
+                <h4>@message["message"]</h4>
+                
+
+                foreach(var comment in ViewBag.join_comment_query) 
+                {
+                    if(@message["id"] == @comment["messages_id"]) 
+                    {
+                        <p>@comment["name"] - @comment["DATE"].ToString("D")</p>
+                        <p class="text-danger">Comment -  @comment["comment"]</p>
+                    }  
+                }
+            <p><form action="/commentprocess" method ="post">
+                <textarea name="Comment_Field" rows="4" cols ="50"></textarea>
+                <br><br> 
+                <button type="submit" class="btn btn-success">Post a Comment</button>
+                <input type="hidden" name="message_id" value="@message["id"]">
+                <input type="hidden" name="user_id_comment" value="@TempData["id"]">
+            </form></p>
+            <h2 class="text-danger">@TempData["comment_errors"]</h2> 
+            }  
+        }
+    </div>
+</div>

@@ -1,0 +1,10 @@
+/Users/eler/Documents/DojoAssignments/C#/calling_card/bin/Debug/netcoreapp2.0/calling_card.deps.json
+/Users/eler/Documents/DojoAssignments/C#/calling_card/bin/Debug/netcoreapp2.0/calling_card.runtimeconfig.json
+/Users/eler/Documents/DojoAssignments/C#/calling_card/bin/Debug/netcoreapp2.0/calling_card.runtimeconfig.dev.json
+/Users/eler/Documents/DojoAssignments/C#/calling_card/bin/Debug/netcoreapp2.0/calling_card.dll
+/Users/eler/Documents/DojoAssignments/C#/calling_card/bin/Debug/netcoreapp2.0/calling_card.pdb
+/Users/eler/Documents/DojoAssignments/C#/calling_card/obj/Debug/netcoreapp2.0/calling_card.csproj.CoreCompileInputs.cache
+/Users/eler/Documents/DojoAssignments/C#/calling_card/obj/Debug/netcoreapp2.0/calling_card.AssemblyInfoInputs.cache
+/Users/eler/Documents/DojoAssignments/C#/calling_card/obj/Debug/netcoreapp2.0/calling_card.AssemblyInfo.cs
+/Users/eler/Documents/DojoAssignments/C#/calling_card/obj/Debug/netcoreapp2.0/calling_card.dll
+/Users/eler/Documents/DojoAssignments/C#/calling_card/obj/Debug/netcoreapp2.0/calling_card.pdb
