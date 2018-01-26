@@ -1,0 +1,41 @@
+@model bank_accounts.Models.Transactions
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Welcome @ViewBag.user.first_name</h2>
+        </div>
+        <div class="col">
+            <h2>Current Balance @ViewBag.user.balance</h2>    
+        </div>
+    </div>
+    <div class="row">
+        <form asp-controller="Transaction" asp-action="Transact" method="post">
+            <h3>Deposit/Withdraw:</h3>
+            <input asp-for="amount">
+            <button type="Submit">Submit</button>
+            <div asp-validation-summary="All"></div>
+        </form>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Amount</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        @{
+            @foreach(var transact in @ViewBag.user.Transactions) {
+                <tbody>
+                    <tr>
+                        <td>@transact.amount</td>
+                        <td>@transact.created_at</td>
+                     </tr>
+                </tbody>
+            }
+        }
+</div>
+<button><a href="/logout">Logout</a></button> 
