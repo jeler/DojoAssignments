@@ -1,0 +1,39 @@
+@model user_dashboard.Models.UserViewModels
+
+@{
+    ViewData["Title"] = "Add User";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <p>Test App Dashboard
+        </div>
+        <div class="col-md-2">
+            <a href="/logout"><button>Logout</button></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+            <h2>Add a new user</h2>
+        </div>
+        <div class="col-md-3">
+            <button><a href="/admin/dashboard">Return to Dashboard</a></button>
+        </div>
+    <div class="row">
+        <div class="col">
+            <form asp-controller="User" asp-action="Register" method="post">
+                <p>First Name:</p>
+                <input asp-for="Reg.first_name">
+                <p>Last Name:</p>
+                <input asp-for="Reg.last_name">
+                <p>Email Address</p>
+                <input asp-for="Reg.email"> 
+                <p>Password</p>
+                <input asp-for="Reg.password">
+                <p>Password Confirmation</p>
+                <input asp-for="Reg.passwordconfirmation">                
+                <br><br>
+                <button type="Submit">Register</button>
+                <div asp-validation-summary="All"></div>
+            </form>
+</div>

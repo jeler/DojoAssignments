@@ -1,0 +1,25 @@
+
+@model wedding_planner.Models.User
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <h2>@ViewBag.wedding.wedder_one and @ViewBag.wedding.wedder_two 's Wedding
+            </h2>
+        </div>
+        <div class="col-md-3">
+            <a href="/Dashboard">Dashboard</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>   
+    <br>
+<h3>Date: @ViewBag.wedding.date.ToString("D")</h3>
+<br>
+<h3>Guests:</h3>
+@foreach(var wedding in @ViewBag.guests ) {
+    @foreach(var guest in wedding.RSVPS) {
+        @guest.User.first_name @guest.User.last_name
+    }
+}
+</div>
+

@@ -9,10 +9,51 @@
     <p>Information: @ViewBag.specific_dojo.information</p>
     <div class="row">
         <div class="col">
+            <a href="/Dojos">Back to Dojos</a> <a href="/Ninjas">Add a Ninja!</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
             <h2>Current Members</h2>
+                <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Ninja</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            @{
+                foreach(var data in @ViewBag.specific_ninja) {
+                <tbody>
+                    <tr>
+                        <td>@data.name</td>
+                        <td><a href="/banish/@data.id">Banish</a></td>
+                    </tr>
+                </tbody>
+                }
+            }
+            </table>
         </div>
         <div class="col">
             <h2>Rogue Ninjas</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Ninja</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            @{
+
+                foreach(var data in @ViewBag.rogue_ninjas) {
+                <tbody>
+                    <tr>
+                        <td>@data.name</td>
+                        <td><a href="/recruit/@data.id/@ViewBag.specific_dojo.id">Recruit</a></td>
+                    </tr>
+                </tbody>
+                }
+            }
         </div>
     </div>    
 </div>

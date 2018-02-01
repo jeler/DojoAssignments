@@ -4,3 +4,18 @@
 @{
     ViewData["Title"] = "Dojo League";
 }
+
+@{
+    foreach(var item in @ViewBag.ninjas) {
+        <h2>@item.name</h2>
+        <h4>Ninja Level - @item.level</h4>
+        @if(@item.description == null) {
+            <h4>Description: This user has no description!</h4>
+        }
+        else {
+        <h4>Description: @item.description</h4>}
+        <h4>Current Dojo:<a href="/Dojos/@item.dojos_id"> @item.dojoname</a></h4>
+    }
+}
+
+<h2>@ViewBag.name</h2>

@@ -15,7 +15,6 @@ namespace restauranter {
             // Add framework services.
             services.AddMvc ();
             services.AddSession ();
-            services.Configure<MySqlOptions>(Configuration.GetSection("DBInfo"));
             services.AddDbContext<restauranterContext>(options => options.UseMySQL(Configuration["DBInfo:ConnectionString"]));
         }
 

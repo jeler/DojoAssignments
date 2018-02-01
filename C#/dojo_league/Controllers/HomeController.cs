@@ -38,13 +38,17 @@ namespace dojo_league.Controllers
                 return RedirectToAction("Ninja");
             }
             else {
+                ViewBag.ninjas = ninjaFactory.FindAll();
+                ViewBag.dojos_list = dojoFactory.FindAll();  
                 return View("Ninja");
             }
         }
-        
+
         [HttpGet]
         [Route("Ninjas/{id}")]
         public IActionResult ninja_page(int id) {
+            ViewBag.ninjas = ninjaFactory.FindById(id);
+            Console.WriteLine(ViewBag.ninjas);
             return View();
         }
 
@@ -59,6 +63,8 @@ namespace dojo_league.Controllers
         [Route("Dojos/{id}")]
         public IActionResult dojo_page(int id) {
             ViewBag.specific_dojo = dojoFactory.FindById(id);
+            ViewBag.specific_ninja = ninjaFactory.NinjasForDojoById(id);
+            ViewBag.rogue_ninjas = ninjaFactory.FindRogue();
             return View("Dojoinfo");
         }
 
@@ -70,10 +76,24 @@ namespace dojo_league.Controllers
                 return RedirectToAction("Dojos");
             }
             else {
+            ViewBag.dojos = dojoFactory.FindAll();
             return View("Dojos");
             }
         }
 
+        [HttpGet]
+        [Route("banish/{id}")]
 
+        public IActionResult banish(long id) {
+            ninjaFactory.Banish(id);
+            return RedirectToAction("Dojos");
+        }
+
+        [HttpGet]
+        [Route ("recruit/{id}/{dojos_id}")]
+        public IActionResult recruit(long id, long dojos_id) {
+            ninjaFactory.Recruit(id, dojos_id);
+            return RedirectToAction("Ninja");
+        }
     }
 }

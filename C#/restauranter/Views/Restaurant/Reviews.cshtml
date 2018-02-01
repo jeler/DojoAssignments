@@ -1,0 +1,17 @@
+@model restauranter.Models.Restaurant
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    foreach(var info in @ViewBag.data) {
+        <h2>Review for: @info.restaurant_name @info.stars stars</h2>
+        <h4>Reviewer: @info.user_name @info.visit_date.ToString("D")</h4>
+        <br>
+        <h5 class="text-danger">@info.review</h5>
+        <br>
+        <hr>
+    }
+}
+
+<button><a href="/">Back to Reviews</a></button>

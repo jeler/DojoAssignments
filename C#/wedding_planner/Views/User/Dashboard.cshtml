@@ -1,0 +1,78 @@
+@model wedding_planner.Models.Wedding
+
+@{
+    ViewData["Title"] = "Wedding Planner";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <h2>Welcome to the Wedding Planner @ViewBag.user.first_name!</h2>
+        </div>
+        <div class="col-md-2">
+            <a href="/logout"><button>Logout</button></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+        </div>
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Wedding</th>
+                <th>Date</th>
+                <th>Guests</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        @foreach(var wedding in @ViewBag.weddings) 
+        {
+        
+            <tbody>
+                <tr>
+                    <td><a href="/wedding/@wedding.WeddingId">@wedding.wedder_one & @wedding.wedder_two</a></td>
+                    <td>@wedding.date.ToString("D")</td>
+                    <td>@wedding.RSVPS.Count</td>
+                    @if(@wedding.CreatorId == @ViewBag.user.UserId) 
+                    {
+                    <td><a href="delete/@wedding.WeddingId">
+                    Delete</a></td>
+                    }
+                    else 
+                    {
+                        @if(wedding.RSVPS.Count == 0) 
+                        {
+                            <td><a href="rsvp/@wedding.WeddingId">RSVP</a></td>
+                        }
+                        else 
+                        {
+                            bool found = false;
+                            @foreach(var RSVP in wedding.RSVPS) 
+                            {
+                                
+                                @if(@RSVP.UserId == @ViewBag.user.UserId) 
+                                {
+                                    found =true;
+                                }
+                                
+                            }
+                            @if (found==true) 
+                            {
+                            <td><a href="unrsvp/@wedding.WeddingId">Un-RSVP</a></td>
+                            }
+                            else 
+                            {
+                            <td><a href="rsvp/@wedding.WeddingId">RSVP</a></td>
+                            }
+                        }
+                    }
+                </tr>
+            </tbody>
+        }       
+        </table>
+        <div class="col-md-10">
+        </div>
+        <div class="col-md-2">
+            <a href="/newwedding"><button>New Wedding</button></a>
+        </div>
+</div>

@@ -1,0 +1,30 @@
+@model user_dashboard.Models.UserViewModels
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <p>Test App <a href="">Dashboard</a></p>
+        </div>
+        <div class="col-md-2">
+            <a href="/logout"><button>Logout</button></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>created_at</th>
+                    <th>user_level</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>

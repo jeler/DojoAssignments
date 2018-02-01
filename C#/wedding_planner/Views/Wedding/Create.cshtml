@@ -1,0 +1,27 @@
+@model wedding_planner.Models.Wedding
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <h2>Plan Your Wedding</h2>
+        </div>
+        <div class="col-md-3">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div>
+        <form asp-controller="Wedding" asp-action="Create" method="post">
+            <p>Wedder One:</p>
+            <input asp-for="wedder_one">
+            <p>Wedder Two:</p>
+            <input asp-for="wedder_two">
+            <p>Date</p>
+            <input asp-for="date" type="date"> 
+            <p>Wedding Address</p>
+            <input asp-for="address">                
+            <br><br>
+            <button type="Submit">Create</button>
+            <div asp-validation-summary="All"></div>
+        </form> 
+    </div>
+</div>
