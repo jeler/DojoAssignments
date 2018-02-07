@@ -1,0 +1,60 @@
+@model user_dashboard.Models.UserViewModels
+
+@{
+    ViewData["Title"] = "Edit User";
+}
+<link rel="stylesheet" href="~/css/admin_editstyle.css"/>
+<div class="container">
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">Test App</a>
+        <div class="navbar-nav">                   
+            <a class=" nav-link" href="/admin/dashboard">Dashboard</a>
+        </div>
+        <div class="navbar-nav">
+            <a class="nav-link" href="/users/show/@ViewBag.user.UserId">Profile</a>
+        </div>
+        <button class="navbar-text"><a href="/logout">Logout</a></button>
+    </nav>
+    <div class="row">
+        <div class="col-md-10">
+            <h2>Edit User # @ViewBag.user.UserId</h2>
+        </div>
+        <div class="col-md-2">
+            <button type="button" class="btn btn-danger"><a href="/dashboard/admin">Return to Dashboard</a></button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h3>Edit Information</h3>
+            <form asp-controller="Admin" asp-action="Admin_Edit_Process" method="post" class="edit_info">
+                <p>Email Address:</p>
+                <input asp-for="AdminEditInfo.email">
+                <p>First Name:</p>                
+                <input asp-for="AdminEditInfo.first_name">
+                <p>Last Name:</p>
+                <input asp-for="AdminEditInfo.last_name">
+                <p>User Level:</p>
+                <select asp-for="AdminEditInfo.user_level">
+                    <option value="0">Normal</option>
+                    <option value="9">Admin</option>  
+                </select>
+                <input type="hidden" name="user_id" value="@ViewBag.user.UserId">
+                <br><br>
+                <button class="btn btn-success">Save</button>
+                <div asp-validation-summary="All"></div>
+            </form>           
+        </div>
+        <div class="col">
+            <h3>Change Password</h3>
+            <form asp-controller="Admin" asp-action="Admin_Change_Password" method="post">
+                <p>Password</p>
+                <input asp-for="AdminPass.password">
+                <p>Password Confirmation</p>
+                <input asp-for="AdminPass.passwordconfirmation">
+                <br><br>
+                <button class="btn btn-success">Update Password</button>
+                <input type="hidden" name="user_id" value="@ViewBag.user.UserId">             
+            </form>
+        </div>
+    </div>
+</div>

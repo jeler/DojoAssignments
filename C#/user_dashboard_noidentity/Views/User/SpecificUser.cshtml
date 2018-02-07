@@ -1,0 +1,106 @@
+@model user_dashboard.Models.CommunicationViewModels
+
+@{
+    ViewData["Title"] = "User Information";
+}
+<link rel="stylesheet" href="~/css/specific_userstyle.css">
+<div class="container">
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">Test App</a>
+            @if(@ViewBag.logged_in_user.user_level == 9) 
+            {
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/dashboard/admin">Dashboard</a>
+                </div>
+            }
+            else
+            {
+                <div class="navbar-nav">                    
+                    <a class=" nav-link"><href="/dashboard">Dashboard</a>
+                </div>
+            } 
+        <button class="navbar-text"><a href="/logout">Logout</a></button>
+    </nav>
+    <h2>@ViewBag.user.first_name @ViewBag.user.last_name</h2>
+    <p>Registered at: @ViewBag.user.created_at</p>
+    <p>User ID # @ViewBag.user.UserId</p>
+    <p>Email Address: @ViewBag.user.email</p>
+    @if(@ViewBag.user.description == null) 
+    {
+        <p>Description: Nothing yet!</p>
+    }
+    else 
+    {
+    <p>Description: @ViewBag.user.description</p>
+    }
+    <h2>Leave a message for @ViewBag.user.first_name</h2>
+    <form asp-controller="User" asp-action="Message" method="post">
+        <textarea asp-for="Mess.message" rows="4" cols ="125"></textarea>
+        <p><button type="submit" class="btn btn-primary"> Post a Message</button></p>
+        <div asp-validation-summary="All"></div>
+        <input type="hidden" value="@ViewBag.logged_in_user.UserId" name="user_id">
+        <input type="hidden" name="specific_user_page_id" value="@ViewBag.user.UserId">
+    </form>
+    @if (@ViewBag.messages.Count == 0)
+    {
+        <h2 class="text-danger">This User has no Messages! Perhaps you should leave one?</h2>
+    }
+    else 
+    {
+    @foreach(var message in @ViewBag.messages)
+        {
+            <div class="row">
+                <div class="col-md-9">
+                    <p><a href="/users/show/@message.User.UserId">@message.User.first_name</a> says:</p>
+                </div>
+                <div class="col-md-3">
+                    @message.created_at.ToString("MMMM d, yyyy h:mm tt") 
+                </div>
+            </div>
+            <div class="row message_box">
+                @message.message
+            </div>
+            <br><br>
+            @foreach(var comment in message.Comments) 
+            {
+                
+                @if(comment.User.UserId != @ViewBag.user.UserId)
+                {
+                <div class="row">
+                    <div class="col-md-9">
+                        <p><a href="/users/show/@ViewBag.user.UserId">@comment.User.first_name </a>says</p>
+                    </div>
+                    <div class="col-md-3">
+                        @comment.created_at.ToString("MMMM d, yyyy h:mm tt") 
+                    </div>
+                </div>
+                }
+                else 
+                {
+                <div class="row">
+                    <div class="col-md-9">
+                        <p>@comment.User.first_name says</p>
+                    </div>
+                    <div class="col-md-3">
+                        @comment.created_at.ToString("MMMM d, yyyy h:mm tt") 
+                    </div>
+                </div>
+                }
+                <div class="row message_box">
+                    <p>@comment.comment</p>
+                </div>
+                <br><br>
+            }
+            <div class="col-md-3">
+                <form asp-controller="User" asp-action="Comment" method="post">
+                    <textarea asp-for="Comm.comment" rows="4" cols ="125"></textarea>
+                    <p><button type="submit" class="btn btn-success"> Post </button></p>
+                    <div asp-validation-summary="All"></div>
+                    <input type="hidden" name="message_id" value="@message.MessageId">
+                    <input type="hidden" value="@ViewBag.logged_in_user.UserId" name="user_id">  
+                    <input type="hidden" name="specific_user_page_id" value="@ViewBag.user.UserId">
+                </form>
+            </div>
+        }
+    }
+</div>
