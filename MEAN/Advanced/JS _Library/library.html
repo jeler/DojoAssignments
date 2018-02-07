@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <script>
+            function each(arr, callback) {
+  // loop through the array
+  for(var i = 0; i < arr.length; i++) {
+    callback(arr[i]); // invoking the callback many times... delegation!
+  }
+}
+
+each([2,4,6,8], function(num) {return num *3})
+
+var _ = 
+{
+    map: function(arr, callback) 
+    {
+        let result =[];
+        for(let i =0; i<arr.length; i++)
+        {
+            result[i] = callback(arr[i]);
+        }
+        return result;
+    },
+    reduce: function(arr, callback, memo = 0) 
+    { 
+        for(let i =0; i<arr.length; i++)
+        {
+            memo = callback(arr[i], memo);
+        }
+        return memo;
+    },
+    find: function(arr, callback) 
+    {   
+        for(let i = 0; i< arr.length; i++)
+        {
+            // console.log("got here!")
+            // console.log(arr[i])
+            console.log(callback);
+            if(callback(arr[i]))
+            {
+                return arr[i];
+            }
+
+        }
+        return false;
+    },
+    filter: function(arr, callback) 
+    { 
+        let result = [];
+        for(let i =0; i<arr.length; i++)
+        {
+            if (callback(arr[i]))
+            {
+                result[i] = arr[i];
+            }
+        }
+        return result;
+    },
+    reject: function() 
+    { 
+
+    }
+}
+// var evens = _.filter([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
+// console.log(evens); 
+var maps = _.map([2,4,6,8], function(num) {return num * num});
+console.log(maps);
+var reduced = _.reduce([1,2,3,4,5,6], function(num, memo) {return num +memo})
+console.log(reduced);
+var found = _.find([3,5], function(num) {return num % 2 == 0});
+console.log(found);
+var found2 = _.filter([2,4,6,5,9], function(num) {return num % 2 == 0});
+console.log(found2);
+</script>
+    </head>
+</html>

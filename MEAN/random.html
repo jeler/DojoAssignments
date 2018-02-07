@@ -1,0 +1,274 @@
+<html>
+    <head>
+        <script>
+//             const MyObjConstructor = function(name) {
+//             const myPrivateVar = "Hello"; // just to show that it is hard to see this private var easily
+//             this.name = name; // but you can see the name!
+//             this.method = function() {
+//                 console.log( "I am a method");
+//             };
+//             }
+//             const obj1 = new MyObjConstructor('object1');
+//             const obj2 = new MyObjConstructor('object2');
+//             console.log(obj1);
+
+//             obj1.newProperty = "newProperty!";
+//             obj1.__proto__.anotherProperty = "anotherProperty!";
+//             // DONT USE THIS WAY TO ADD PROTOTYPE
+//             console.log(obj1.anotherProperty); // anotherProperty!
+//             console.log(obj1.newProperty); // newProperty!
+//             // What about obj2?
+//             console.log(obj2.newProperty); // undefined
+//             console.log(obj2.anotherProperty); // anotherProperty! <= THIS IS THE COOL PART!
+
+//             function Cat(catName) {
+//                 const name = catName;
+//                 this.getName = function() {
+//                     return name;
+//                 };
+//                 }
+//                 //adding a method to the cat prototype
+//                 Cat.prototype.sayHi = function() {
+//                 console.log('meow');
+//                 };
+//                 //adding properties to the cat prototype
+//                 Cat.prototype.numLegs = 4;
+//                 // PROTOTYPE  = INHERITANCE
+//                 const muffin = new Cat('muffin');
+//                 const biscuit = new Cat('biscuit');
+//                 const cinnamon = new Cat("cinnamon")
+//                 console.log(muffin, biscuit);
+//                 //we access prototype properties the same way as we would access 'own' properties
+//                 muffin.sayHi();
+//                 // will log Meow
+//                 biscuit.sayHi();
+//                 // will also log Meow
+//                 console.log(muffin.numLegs);
+//                 // will log 4
+//                 muffin.__proto__.numLegs ++;
+//                 // will mess up rest of cats! Now will have 5 legs.
+//                 console.log(biscuit.numLegs);
+//                 console.log(cinnamon.numLegs)
+
+//                 function Person(name, age) {
+//                     this.name = name;
+//                     this.age = age;
+//                 }
+//                 // Attach class methods using .prototype
+//                 Person.prototype.greet = function() {
+//                     console.log("Hello my name is " + this.name + " and I am " + this.age + " years old!");
+//                     return this;
+//                     // if you remove this and chain methods error = cannot read property of "sing" of undefined
+//                 };
+//                 // Create new instances with the new keyword
+//                 const amelia = new Person('Amelia', 36);
+//                 // Create instance methods by attaching the function directly to an instance
+//                 amelia.sing = function() {
+//                 console.log("Lalalala!");
+//                 };
+//                 amelia.greet().sing();
+
+//                 function Car(make, model) {
+//                 let odometer = 0;
+//                 this.make = make;
+//                 this.model = model;
+                
+//                 // To make functions private, we scope them to the constructor
+//                 function updateOdometer(distance) {
+//                     odometer += distance;
+//                 };
+                
+//                 // 'Getter' functions help us read private variables
+//                 this.readOdometer = function() {
+//                 return odometer;
+//                 }
+                
+//                 // 'Setter' functions help us update private variables
+//                 this.drive = function(distance) {
+//                 updateOdometer(distance);
+//                 // return this will allow us to chain methods
+//                 return this;
+//                 }
+//             }
+//             const myCarInstance = new Car("Chevy", "Camaro");
+//             // by returning this, we can chain drive()
+//             myCarInstance.drive(50).drive(90); 
+//             // private variable is undefined
+//             console.log(myCarInstance.odometer);
+//             // but we can read it with our getter function
+//             console.log(myCarInstance.readOdometer());
+
+// // parent Dot class
+// class Dot {
+//    constructor(x, y) {
+//         this.x = x;
+//         this.y = y;
+//     }
+//     showLocation() {
+//         console.log(`This ${ this.constructor.name } is at x ${this.x} and y ${this.y}`);
+//     }
+//     parentFunction(){
+//         return "This is coming from the parent!";
+//     }
+// }
+// // child Circle class
+// class Circle extends Dot {
+//     constructor(x, y, radius) {
+//         super(x, y);
+//         this.radius = radius;
+//     }
+//     childFunction() {
+//         // by using super, we can call the parent method
+//         const message = super.parentFunction();
+//         console.log(message);
+//     }
+//     get diameter() {
+//         return this.radius * 2;
+//     }
+// }
+// // we can now create Circles
+// const circle1 = new Circle(33, 33, 33);
+// // same attributes as a Dot, plus a radius
+// console.log(circle1);
+// // and Circles can access Dot methods
+// circle1.showLocation();
+// circle1.childFunction();
+// console.log(circle1.diameter);
+
+// console.log("NOW: ");
+// console.log("Declaring and assigning variable 'ninja'.");
+// var ninja = 'Libby';
+// setTimeout( function myCallbackFunction(){
+//   console.log("LATER: ")
+//   console.log(ninja, "LATER"); }, 2000
+// );
+// console.log("Printing ninja value.");
+// console.log(ninja, "NOW");
+
+// var a = 2;
+// var b = function() { console.log("something"); };
+// function doSomething(x) {
+//   console.log(typeof(x));
+// }
+// doSomething(a);
+// doSomething(b);
+
+// function doSomething(possibleCallback) {
+//   if (typeof(possibleCallback) === 'function'){
+//     console.log('possibleCallback is a callback!');
+//     possibleCallback(); //we can invoke the callback!
+//   }
+//   else {
+//     console.log('possibleCallback: ', possibleCallback, ' is not a callback function.');
+//   }
+// }
+// doSomething(function myCallback(){ console.log('yes, I am a callback!') });
+// doSomething('string');
+
+// function makePasta(pasta, makeSauce) {
+//   console.log("Boiling water");
+//   console.log("Putting " + pasta + " pasta in the water");
+//   // create a variable for sauce!
+//   var sauce = makeSauce();          // invoke makeSauce, our callback
+//   console.log("Mixing sauce");
+//   console.log("Pasta is done!");
+//   return pasta + " Pasta with " + sauce + " sauce! Voila!";
+// }
+// function makePesto() {
+//   console.log("Making Pesto");
+//   return "pesto";
+// }
+// function makeAlfredo() {
+//   console.log("Making Alfredo");
+//   return "alfredo";
+// }
+// // we pass the whole makePesto recipe to makePasta!
+// console.log(makePasta("Penne", makePesto));
+// // notice lack of parentheses after makePesto.
+// // Remember: we want to pass the function, not execute it and pass a return value.
+// // console.log(makePasta("Farfalle", makeAlfredo));
+
+// function printResult(doSomething) {
+//     var result = doSomething();         // store the return value of the callback parameter
+//     console.log(result);                // print the result!
+// }
+// printResult(function returnFive(){ return 5 })  
+
+// function each(arr, callback) {
+//   // loop through the array
+//   for(var i = 0; i < arr.length; i++) {
+//     callback(arr[i]); // invoking the callback many times... delegation!
+//   }
+// }
+// each([1,2,3], function(num) { alert(num + " I am from the callback!"); }) //so many alerts!
+
+function getStuffFromDatabase(callback){
+  var data;
+  var myTimer = setTimeout(function(){
+    if (typeof(callback) == 'function'){
+      //it just got back from the DB!
+      data = [{name:'Todd'},{name:'Michael'},{name:'Portia'}];
+      callback(data);
+    }
+  }, 10000);
+  // it takes 10 seconds to get anything back <- you should fix your cloud server.!!!
+  return data;
+}    
+// simulated request (failing);
+// function requestDataFromDatabase(){
+//   var data = getStuffFromDatabase(); // this should return my data right??
+//   console.log(data);
+// }
+
+// function requestDataFromDatabase(){
+//   var data = getStuffFromDatabase(function myCallback(data){ // ooh shiny callback!.. when is it invoked???
+//     console.log(data, "ASynchronous");
+//     for (var i = 0; i < data.length; i ++){
+//       console.log(data[i].name);
+//     }
+//   });
+//   console.log(data, "Synchronous");
+// }
+// function catchFly(){
+//   console.log('I just caught a fly!');
+// }
+// requestDataFromDatabase();
+// // keep running my program!
+// console.log('Hello');
+
+// catchFly();
+function getStuffFromDatabase(resolve,reject){
+    var data = "whee"
+    setTimeout(function(){
+      // if (typeof(callback) == 'function'){
+        data = [{name:'Todd'},{name:'Michael'},{name:'Portia'}];
+        resolve(data);
+      // }
+    }, 1000);
+    // reject()
+    // return data;
+}
+function requestDataFromDatabase(){
+  console.log('running');
+  //creates promise
+  var data = new Promise(function(resolve,reject){
+    getStuffFromDatabase(resolve,reject); // kind of like a shiny callback
+  });
+  // if promise is successful (keeps me from putting all the logic in the callback)
+  data.then(function(data){
+    console.log(data, "ASynchronous");
+    for (var i = 0; i < data.length; i ++){
+      console.log(data[i].name);
+    }
+  });
+  data.catch(function(){
+    console.log('failure');
+  })
+  console.log('end');
+}
+requestDataFromDatabase();
+</script>
+    </head>
+    <body>
+    </body>
+</html>

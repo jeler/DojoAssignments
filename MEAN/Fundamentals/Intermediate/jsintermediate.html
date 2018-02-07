@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <script>
+            function starString(n) 
+            {
+                var star= ""; // empty string to store stars
+                for(var i = 0; i < n; i++) //  add stars n times to empty string
+                {
+                    star+= "*"; 
+                    
+                }
+                return star
+            }
+            // let stars = starString(8)
+            // console.log(stars);
+
+            function drawStars(array)
+            {
+                var star ="*";
+                for(var i = 0; i < array.length; i++)
+                {
+                    if (typeof array[i] == "number") 
+                    {
+
+                        var stars2 = star.repeat(array[i]);
+                        // console.log(stars2);
+                        console.log(star.repeat(array[i]))
+                    }
+                    else if (typeof array[i] == "string")
+                    {
+                        var letter = array[i][0].toLowerCase();
+                        // console.log(letter);
+                        console.log(letter.repeat(array[i].length))
+                    }
+                    // star += "*" * array[i].ToString;
+                    // return star.repeat(array[i]);
+
+                }
+            }
+
+            // let starrynight = drawStars([4, 6, 1, 3, 5, 7, 25]);
+            // console.log(starrynight);
+            let x = drawStars([4, "Tom", 1, "Michael", 5, 7, "Jimmy Smith"])
+            // console.log(x);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <script>
+            // let students = 
+            // [
+            //     {name: 'Remy', cohort: 'Jan'},
+            //     {name: 'Genevieve', cohort: 'March'},
+            //     {name: 'Chuck', cohort: 'Jan'},
+            //     {name: 'Osmund', cohort: 'June'},
+            //     {name: 'Nikki', cohort: 'June'},
+            //     {name: 'Boris', cohort: 'June'}
+            // ];
+            // for(student in students)
+            // {
+
+            //     // console.log(student)
+            //     for(key in students[student]) 
+            //     {
+            //         // console.log(key)
+            //         console.log(key, students[student][key])
+            //         document.write (key + " " + students[student][key] + " " +"<br>");
+
+                    
+            //     }
+            // }
+
+            let users = 
+            {
+                employees: 
+                [
+                    {'first_name':  'Miguel', 'last_name' : 'Jones'},
+                    {'first_name' : 'Ernie', 'last_name' : 'Bertson'},
+                    {'first_name' : 'Nora', 'last_name' : 'Lu'},
+                    {'first_name' : 'Sally', 'last_name' : 'Barkyoumb'}
+                ],
+                managers: 
+                [
+                {'first_name' : 'Lillian', 'last_name' : 'Chambers'},
+                {'first_name' : 'Gordon', 'last_name' : 'Poe'}
+                ]
+            };
+            for(var user in users)
+            {
+                var upper = user.toUpperCase();
+                console.log(upper);
+                var count = 0;
+                for(var employee in users[user])
+                {
+                    count++;
+                    var myString = "";
+                    myString += count + "-";
+                    myString += users[user][employee]["last_name"] + "," + users[user][employee]["first_name"] + "="
+                    myString += users[user][employee]["first_name"].length + users[user][employee]["last_name"].length; 
+                    console.log(myString)
+                }
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

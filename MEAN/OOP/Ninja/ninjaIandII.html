@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <script>
+            function Ninja(name) 
+            {
+                const self = this;
+                this.name = name;
+                // right side = what is in parens
+                this.health = 100;
+                const _speed = 3;
+                // should be private
+                const _strength = 3;
+                // should be private
+                this.sayName = function()
+                {
+                    console.log(name)
+                    // return name;
+                }
+                
+                // this.showSpeed = function() 
+                // {
+                //     return privateSpeed;
+                // }
+
+                // this.showStrength = function()
+                // {
+                //     return privateStrength;
+                // }
+                this.showStats = function()
+                {
+                    console.log("Name:" + this.name + " " +  "Health:" +  this.health + " " +  "Speed:" + _speed+ " " + "Strength:" + _strength);
+                    console.log("private variable is" + _speed)
+                    return this;
+                }
+                
+                this.drinkSake = function()
+                {
+                    this.health +=10;
+                    console.log("Health is now" + this.health);
+                    return this;
+                }
+                this.punch = function(opponent)
+                {
+                    if(opponent instanceof Ninja == true)
+                    {
+
+                        opponent.health -=5;
+                        console.log(opponent.name + " " + "was punched by" + " " + this.name + " " +  "and lost 5 Health!" + " " + opponent.health)
+                        // let message = '${Ninja.name} was punched by ${this.name} and lost 5 health!'
+                        // console.log(message);
+                    }
+                    else 
+                    {
+                        console.log("You need a ninja to punch!");
+                    }
+                }
+
+                this.kick = function(opponent) 
+                {
+                    if(opponent instanceof Ninja == true)    
+                    {
+                        var healthloss = 15*_strength
+                        opponent.health -= healthloss
+                        // let message = "${Ninja.name} was kicked by ${this.name} and lost ${strengthloss}";
+                        // console.log(message)
+                        // console.log('${Ninja.name} was kicked by ${this.name} and lost ${stengthloss}'); Does not work
+                        console.log(opponent.name + "was kicked by" + this.name + "and lost" + healthloss);
+                    }   
+                    else 
+                    {
+                        console.log("You need a ninja to kick!")
+                    }             
+                }
+
+            }
+            function Human(name)
+            {
+                this.name = name;
+            }
+            // const ninja1 = new Ninja("Hyabusa");
+            // ninja1.sayName();
+            // ninja1.showStats().drinkSake().showStats();
+            // ninja1.privateStats();
+            const blueNinja = new Ninja("Goemon");
+            const redNinja = new Ninja("Bill Gates");
+            redNinja.punch(blueNinja);
+            blueNinja.kick(redNinja);
+            const newHuman = new Human("Jenny");
+            blueNinja.punch(newHuman);
+            blueNinja.kick(newHuman);
+            console.log(blueNinja instanceof Ninja);
+            console.log(newHuman instanceof Ninja);
+            
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
