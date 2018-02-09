@@ -1,0 +1,37 @@
+<html>
+    <head>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    // this triggers the connection event in our server!
+                    var socket = io.connect();
+                    // we'll write all the socket stuff after the above line!
+                    $('#count').click(function () {
+                        socket.emit("counter_clicked");
+                    });
+                    $('#reset').click(function() {
+                        socket.emit("counter_resetter");
+                    })
+                    socket.on('server_response', function (data) {
+                        console.log('The server says: ' + data.counter);
+                        // $("#counter").append(data.counter)
+                        $("#counter").text(data.counter);
+                    });
+            })
+        
+            </script>         
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <h2>The button has been pushed<div id="counter">0</div>times!</h2>
+        <h3>Push the button to update the count!</h3>
+        <div class="btn-group btn-group-lg">
+            <button id="count" class="btn btn-primary" class="change_button">Push the epic button!</button>
+        </div>
+        <br><br>
+        <div class="btn-group btn-group-lg">        
+            <button id="reset" class="btn btn-danger">Reset</button>
+        </div>
+    </body>
+</html>

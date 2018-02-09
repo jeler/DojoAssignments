@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                // this triggers the connection event in our server!
+                var socket = io.connect();
+                // we'll write all the socket stuff after the above line!
+                $('#form1').submit(function () {
+                    // socket.emit("posting_form", { name: $('#name').val(), location: $("#location").val(), language: $("#language").val(), comment: $("#comment").val()  });
+                    console.log($("#form1").serialize());
+                    console.log($(this).serialize());
+                    socket.emit("posting_form", $(this).serialize());
+                    return false;
+                });
+
+                // socket.on('updated_message', function (data) {
+                //     $("#information").append("You emitted the following information:" + "Name:" + data.message.name  + "Location:" + data.message.location + "Language:" + data.message.language + "Comment:" + data.message.comment + "<br>" + "<br>")  
+                // });
+                     
+                    
+                socket.on('updated_message', function (data) {
+                // console.log(JSON.parse(data));
+                console.log(data);
+                // var string = JSON.stringify(data.data);
+                var string = JSON.stringify(data.data, null, 2);
+                console.log(JSON.stringify(data.data))
+                // console.log(JSON.parse(data.data));
+                $("#information").append("Your Information emitted by the server is" + data.data)  
+                });
+
+                socket.on('random_number', function(data){ 
+                    $("#information").append("Your lucky number emitted by the server is "  + data.number)
+                });
+        });
+        </script>
+    </head>
+    <body>
+        <div id="information">        
+        </div>
+        <form id ="form1" method="post">
+            <p>Your Name</p>
+            <input type="text"  name="name" id="name">
+            <p>Dojo Location</p>
+            <select id="location">
+                <option>Mountain View</option>
+                <option>Chicago</option>
+                <option>Seattle</option>
+                <option>Oklahoma</option>
+            </select>
+            <p>Favorite Language</p>
+            <select id="language" name="name">
+                <option>Javascript</option>
+                <option>C#</option>
+                <option>PHP</option>
+                <option>Java</option>
+            </select>
+            <p>Comment (optional)</p>
+            <input type="text"id="comment" name="comment">
+            <br><br>
+            <input type="submit" value="click for candy" id="submit">
+        </form>
+    </body>
+</html>
