@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <title>Mongoose!</title>
+    </head>
+    <body>
+        <h2>Create a Mongoose!</h2>
+        <form action="/mongooses" method="post">
+            <p>Name:</p>
+            <input type="text" name="name">
+            <p>Home Town:</p>
+            <input type="text" name="home_town">
+            <p>Age:</p>
+            <input type="number" name="age">
+            <br><br>
+            <input type="submit" value="Make a Mongoose!">
+        </form>
+        <p> <% for (var x =0; x<errors.length; x++) { %>
+                <p><%= errors[x]%></p>
+           <% } %></p>
+    </body>
+</html>
