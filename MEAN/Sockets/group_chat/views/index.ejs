@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Group Chat</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type ="text/javascript">
+        $(document). ready(function (){
+            var name;
+        // io  = io.connect();
+        var socket = io.connect();        
+        var name = window.prompt("What is your name")
+        socket.emit("got_a_new_user", {name: name});
+        // sends name from prompt to server
+        socket.on("existing_users", function(data){
+            $("#user_list").empty();
+            $.each(data.users, function (index, value) {
+            $("#user_list").append(value + "<br>");
+            });
+            // add user
+        });
+        socket.on("new_user", function(data){
+            console.log(data)
+            window.alert(data.data.name + " " + "has joined the channel!")
+        });
+    });
+    
+    </script>
+</head>
+<body>
+    <div id="user_list">
+    </div>
+    <div id="this_user">
+    </div>
+</body>
+</html>

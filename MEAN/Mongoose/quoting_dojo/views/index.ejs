@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body>
+        <h2>Welcome to Quoting Dojo!</h2>
+        <form action="/quotes" method="post">
+            <p>Your Name:</p>
+            <input type="text" name="name">
+            <p>Your Quote:</p>
+            <textarea rows="4" cols="50" name="quote"></textarea>
+            <br><br>
+            <div class="col-md-6">
+                <input type="submit" value="Add my Quote">
+            </div>
+            <div class="col-md-6">
+                <button><a href="/quotes">Skip to Quotes</a></button>
+            </div>
+        </form>
+        <p> <% for (var x =0; x<errors.length; x++) { %>
+            <p><%= errors[x]%></p>
+       <% } %></p>
+     </body>
+</html>
