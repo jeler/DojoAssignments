@@ -10,7 +10,7 @@
 <body>
     <div class"container">
         <div class="col-md-8">
-            <h2>Registration:</h2>
+            <h2>Registration</h2>
             <form action="register_user" method="post">
                 <p>Email Address</p>
                 <input type="email" name="email">
@@ -32,6 +32,18 @@
                     <p><%= errors[x]%></p>
             <% } %>
             <% } %>
+    </div>
+        <div class="col-md-4">
+                <h2>Login</h2>
+                    <form action="/login_user" method="post">
+                    <p>Email Address:</p>
+                    <input type="email" name="email_login">
+                    <p>Password:</p>
+                    <input type="password" name="password_login">
+                    <br><br>
+                    <input type="submit">
+                </form>
+            </div>
         </div>
     </div>
 </body>
