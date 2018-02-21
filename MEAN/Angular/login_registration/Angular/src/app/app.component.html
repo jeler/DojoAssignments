@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="col-md-6">
+      <h2>Registration</h2>
+      <form (submit) = onSubmit()>
+        <p class="text-danger" *ngIf="errors && errors['email']">{{errors["email"]["message"]}}</p>
+        <p class="text-danger"  *ngIf="errors && errors['first_name']">{{errors["first_name"]["message"]}}</p>
+        <p class="text-danger"  *ngIf="errors && errors['last_name']">{{errors["last_name"]["message"]}}</p>
+        <p class="text-danger"  *ngIf="errors && errors['password']">{{errors["password"]["message"]}}</p>
+        <p class="text-danger"  *ngIf="errors && errors['password_confirmation']">{{errors["password_confirmation"]["message"]}}</p>
+          <p>Email Address</p>
+          <input type="email" name="UserReg.email" [(ngModel)]="UserReg.email" class="form-control" />     
+          <p>First Name:</p>
+          <input type="text" name="UserReg.first_name" [(ngModel)]="UserReg.first_name" class="form-control" required minlength="4"/>
+          <p>Last Name:</p>
+          <input type="text" name="UserReg.last_name" [(ngModel)]="UserReg.last_name" class="form-control" required minlength="4"/>
+          <p>Password:</p>
+          <input type="password" name="UserReg.password" [(ngModel)]="UserReg.password"/>
+          <p>Password Confirmation</p>
+          <input type="password" name="UserReg.password_confirm" [(ngModel)]="UserReg.password_confirm"/> 
+          <p>Birthday:</p>
+          <input type="date" name="UserReg.birthday" [(ngModel)]="UserReg.birthday"/>
+          <br><br>
+          <input type="submit">
+      </form>
+    </div>
+  <div class="col-md-6">
+          <h2>Login</h2>
+              <form action="/login_user">
+              <p>Email Address:</p>
+              <input type="email" name="email_login">
+              <p>Password:</p>
+              <input type="password" name="password_login">
+              <br><br>
+              <input type="submit">
+          </form>
+      </div>
+</div>
