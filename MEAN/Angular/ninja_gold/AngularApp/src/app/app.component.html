@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Total Gold: {{gold}}</h2>
+  <div class="row">
+    <div class="col-md-3">
+      <h3>Farm:</h3>
+      <h4>Earns 2-5 Gold</h4>
+      <button (click)="FarmGold()" >Farm!</button>
+    </div>
+    <div class="col-md-3">
+      <h3>Cave:</h3>
+      <h4>Earns 5-10 Gold</h4>
+      <button (click)="CaveGold()" >Cave!</button>
+    </div>
+  </div>
+</div>
+
+<h2>Adventure Log</h2>
+<p *ngFor="let message of messages">{{message}}</p>

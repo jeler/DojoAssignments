@@ -55,16 +55,15 @@ app.post('/tasks', function (req, res) {
 });
 // works with the following get route
 app.get('/tasks/:id', function (req, res) {
-    var task = new Task({ name: req.params.name, title: req.params.title, completed: req.params.completed })
-    task.save(function (err) {
-        if (err) {
-            res.json({ error: err })
+    Task.findById(req.params.id, function(err, task){
+        if(err){
+            res.json({error: err})
         }
         else {
             res.json({ data: task })
         }
     });
-});0
+});
 
 app.put('/tasks/:id/', function(req, res){
     Task.findById(req.params.id, function(err, task){

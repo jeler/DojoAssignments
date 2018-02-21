@@ -5,16 +5,7 @@ import { HttpClient } from '@angular/common/http';
 export class HttpService {
 
   constructor(private _http: HttpClient) {
-    this.getTasks();
-    this.onButtonClick();
-   }
-   getTasks()
-   {
-     return this._http.get('/tasks');
-   }
 
-   onButtonClick() { 
-     return this._http.get('/tasks');
-}
+   }
 
 }
