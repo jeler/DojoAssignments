@@ -1,0 +1,12 @@
+<h1>Seattle, WA</h1>
+<img class="resize" src = {{seattle_picture}}>
+<h2 *ngIf="weather_data"> Humidity: {{weather_data["humidity"]}} </h2>
+<h2 *ngIf="weather_data"> Temparature(Average): {{weather_data["temp"]}} </h2>
+<h2 *ngIf="weather_data"> Temparature(Low): {{weather_data["temp_min"]}} </h2>
+<h2 *ngIf="weather_data"> Temparature (High): {{weather_data["temp_max"]}} </h2>
+
+<!-- <p>{{ weather_data? }}</p> -->
+<!-- having above code results in below error -->
+
+<!-- compiler.js:485 Uncaught Error: Template parse errors:
+Parser Error: Unexpected end of expression: {{ weather_data? }} at the end of the expression [{{ weather_data? }}] in  -->
