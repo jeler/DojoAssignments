@@ -1,0 +1,12 @@
+<button [routerLink]="['']"> Home</button>
+<br><br>
+<p>Add a new author</p>
+<h2 class="text-danger" *ngIf="errors && errors['name']">{{errors["name"]["message"]}}</h2>
+<form (submit)="createAuthor()">
+  <input type="text" name="newAuthor.name" [(ngModel)]="newAuthor.name" />
+  <br><br>
+  <button [routerLink]="['']"> Cancel</button>
+  <!-- Delete the *ngIf if want cancel to show up all the time -->
+  <!-- <button *ngIf="newAuthor.name" (click)="newAuthor.name = ''">Cancel</button> -->
+  <input type="submit">
+</form>

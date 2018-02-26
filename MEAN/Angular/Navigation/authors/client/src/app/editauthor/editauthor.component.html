@@ -1,0 +1,26 @@
+<button [routerLink]="['']"> Home</button>
+<br><br>
+<form #editform = "ngForm" (submit) = "EditAuthorInfo()"> 
+  <input type="text" 
+  name="author2.name" 
+  required 
+  minlength="2" 
+  [(ngModel)]="author2.name" 
+  #name = "ngModel" 
+  value="{{author2.name}}">
+  <br><br>
+    <div *ngIf="name.errors?.minlength">
+        You need at least 2 characters!
+    </div>
+    <div *ngIf="name.errors?.required">
+      You need to enter a name!
+    </div>
+    <button [routerLink]="['']"> Cancel</button>
+   <input type="submit">
+  <!-- <input type="submit"[disabled] ="editform.invalid" > -->
+  <!-- if want to disable submit button -->
+  <h2 class="text-danger" *ngIf="errors && errors['name']">{{errors["name"]["message"]}}</h2>
+</form>
+
+
+
