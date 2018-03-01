@@ -68,6 +68,9 @@ app.set('views', __dirname + '/views');
 
 app.set('view engine', 'ejs');
 
+var errs =[]
+// errors im pushing into
+
 app.get('/', function (req, res) {
     res.render("index");
 })
@@ -84,7 +87,7 @@ app.post('/register_user', function (req, res) {
             })
         user.save(function (err) {
             if (err) {
-                res.render('index', { errors: [err] })
+                res.json(err);
             }
             else {
                 console.log("successfully added a user!")
@@ -102,10 +105,10 @@ app.post('/register_user', function (req, res) {
 app.post('/login_user', function (req, res) {
     User.findOne({ email: req.body.email_login }, function (err, user) {
         if (err) {
-            res.render('index', { errors: [err] })
+            res.json(err)
         }
         if (!user) {
-            res.render('index', { errors: [err] })
+            res.json({err:"no user found"})
         }
         if (user) 
         {
@@ -116,7 +119,7 @@ app.post('/login_user', function (req, res) {
                     res.redirect('/success')
                 })
                 .catch(function (error) {
-                    res.redirect('/');
+                    res.json({err: "password incorrect!"});
                 })
         }
     })

@@ -17,8 +17,10 @@
                 <button><a href="/quotes">Skip to Quotes</a></button>
             </div>
         </form>
+        <% if(typeof errors != 'undefined') { %> 
         <p> <% for (var x =0; x<errors.length; x++) { %>
             <p><%= errors[x]%></p>
        <% } %></p>
+       <% } %>
      </body>
 </html>
