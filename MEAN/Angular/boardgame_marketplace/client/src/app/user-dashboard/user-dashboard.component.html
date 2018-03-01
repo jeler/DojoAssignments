@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+<div class="search_bar">
+  <input type="text" class="search" [(ngModel)]="searchText" placeholder="Search...">
+  <br><br>
+  <ul>
+    <li *ngFor="let c of characters | filter : searchText">
+      {{c}}
+    </li>
+  </ul>
+</div>
+
+<router-outlet></router-outlet> 

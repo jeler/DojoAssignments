@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <h2 class="bikeoftheday">Boardgame of the day!</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Registration</h2>
+            <form #registerform="ngForm" (submit) = onSubmit()>
+                       <p>Email Address</p>
+                       <input type="email" 
+                       name="UserReg.email" [(ngModel)]="UserReg.email" #email ="ngModel" required  />     
+                       <div class="error" *ngIf="RegError">{{RegError}}</div>
+                       <div class="error" *ngIf="!email.valid">Email is required!</div>
+                       <p>First Name:</p>
+                       <input type="text" name="UserReg.first_name" [(ngModel)]="UserReg.first_name" required minlength="2" #firstname ="ngModel"/>
+                       <div class="error"*ngIf="!firstname.valid">First name must contain 2 characters!</div> 
+                       <p>Last Name:</p>
+                       <input type="text" name="UserReg.last_name" [(ngModel)]="UserReg.last_name"  required minlength="2" #lastname="ngModel"/>
+                       <div class="error"*ngIf="!lastname.valid">Last name must contain 2 characters!</div>  
+                       <p>Password:</p>
+                       <input type="password" name="UserReg.password" [(ngModel)]="UserReg.password" #password="ngModel"required minlength="8"/>
+                       <div class="error"*ngIf="!password.valid">Password contain at least 8 characters!</div>        
+                       <p>Password Confirmation</p>
+                       <input type="password" name="UserReg.password_confirm" [(ngModel)]="UserReg.password_confirm" /> 
+                       <br>
+                       <div class="error" *ngIf="UserReg.password != UserReg.password_confirm">Passwords do not match!</div>
+                       <input type="submit"[disabled]="!registerform.form.valid">
+                   </form>
+        </div>
+        <div class="col-md-6">
+            <h2>Login</h2>
+            <form #loginform = "ngForm" (submit) = onLogin()>
+                  <p>Email Address:</p>
+                  <input type="email" name="UserLog.email" [(ngModel)]="UserLog.email" required #email="ngModel" >
+                  <div class="error"*ngIf="!email.valid">You need to enter an email!</div>
+                  <div class="error" *ngIf="LogError">{{LogError}}</div>
+                  <p>Password:</p>
+                  <input type="password" name="UserLog.password" [(ngModel)]="UserLog.password" #password="ngModel"required>
+                  <div class="error"*ngIf="!password.valid">You need to enter a password!</div>
+                  <div class="error" *ngIf="PwError">{{PwError}}</div>
+                  <br>
+                  <input type="submit" [disabled]="!loginform.form.valid">
+            </form>
+        </div>
+    </div>
+</div>
