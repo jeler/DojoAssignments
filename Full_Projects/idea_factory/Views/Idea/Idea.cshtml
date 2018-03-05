@@ -1,0 +1,38 @@
+@model bright_ideas.Models.Idea
+
+@{
+    ViewData["Title"] = "Idea";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+        </div>
+        <div class="col-md-3">
+            <a href="/bright_ideas">Bright Ideas</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </div> 
+    <h2><a href="/users/@ViewBag.idea.CreatorId">@ViewBag.idea.Creator.name</a> says</h2> <h3>@ViewBag.idea.idea</h3>
+    <p>People who liked this post:</p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Alias</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach(var idea in @ViewBag.likes) 
+        { 
+            @foreach(var like in idea.Likes) 
+            {
+                <tr>
+                    <td><a href="/users/@like.User.UserId">@like.User.alias </a></td>
+                    <td>@like.User.name</td>
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+</div>

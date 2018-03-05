@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friends</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+            <div class="row align-items-start">
+                <div class="col-12 col-md-8">
+                    <h2>Hello {{specific_user.name}}!</h2>
+                </div>
+                <div class="col-6 col-md-4">
+                </a><a href="/logout">Log Out</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h3>Here is a list of your friends:</h3>
+                    <table class="table">
+                        <tr>
+                            <th>Alias</th>
+                            <th>Action</th>
+                        </tr>
+                        {% for info in friends_list_users %}
+                        <tr>
+                            <td>{{info.alias}}</td>
+                            <td><a href="user/{{info.id}}">View Profile</a>  <a href="delete/{{info.id}}">  Remove as Friend</a></td>
+                        </tr>
+
+                        {% endfor %}
+
+                    </table>
+                    <h3>Other Users not on your friend's list:</h3>
+                    <table class="table">
+                        <tr>
+                            <th>Alias</th>
+                            <th>Action</th>
+                        </tr>
+                            {% for info in other_users %}
+                        <tr>
+                            <td><a href="user/{{info.id}}">{{info.alias}}</a></td>
+                            <td><a href="add_friend/{{info.id}}">Add as Friend</a></td>
+                        </tr>
+                            {% endfor %}
+                        
+
+                    </table>
+               
+                </div>
+            </div>
+        </body>
+        </html>

@@ -1,0 +1,49 @@
+@model bright_ideas.Models.UserViewModels
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<link rel="stylesheet" href="~/css/index_style.css"/>
+<div class="container">
+    <div class="welcome">
+        <div class="row justify-content-center">
+            <h1>Register or Login for Ideas!</h1>
+            <br>
+        </div>
+    </div>
+    <br>
+    <div class="row"> 
+        <div class="col-8">
+            <span class="register">
+            <h2>Register</h2>
+            <form asp-controller="User" asp-action="Register" method="post">
+                    <p>Name:</p>
+                    <input asp-for="Reg.name">
+                    <p>Alias:</p>
+                    <input asp-for="Reg.alias">
+                    <p>Email Address</p>
+                    <input asp-for="Reg.email"> 
+                    <p>Password</p>
+                    <input asp-for="Reg.password">
+                    <p>Password Confirmation</p>
+                    <input asp-for="Reg.passwordconfirmation">                
+                    <br><br>
+                    <button type="Submit">Register</button>
+                    <div asp-validation-summary="All"></div>
+            </form>
+            </span>     
+        </div>
+        <div class="col-4">
+            <h2>Login</h2>
+            <form asp-controller="User" asp-action="Login" method="post">
+                <p>Email Address:</p>
+                <input asp-for="Log.email">
+                <p>Password:</p>
+                <input asp-for="Log.password">
+                <br><br>
+                <button type="Submit">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+
