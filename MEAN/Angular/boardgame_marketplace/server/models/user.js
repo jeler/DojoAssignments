@@ -2,10 +2,10 @@ const mongoose = require("mongoose");
 
 const BoardGame = mongoose.model("BoardGame");
 
-var Schema = mongoose.Schema;
-
-bcrypt = require('bcrypt-as-promised')
-
+var Schema = mongoose.Schema,
+    bcrypt = require('bcrypt-as-promised'),
+    mongooseAccountLocking = require("mongoose-account-locking")
+    
 
 // import model created
 
@@ -24,12 +24,15 @@ var UserSchema = new mongoose.Schema({
     password: {
         type: String, required: [true, "You need to enter a password!"], minlength: [8, "Password must be longer than 8 characters"], maxlength: 32
     },
+    loginAttempts: {type: Number, required: true, default: 0},
+    lockUntil: {type: Number},
     boardgames: [{ type: Schema.Types.ObjectId, ref: 'BoardGame' }]
 },
     { timestamps: true });
+
     
-UserSchema.pre('save', function (next) {
-    bcrypt.hash(this.password, 10)
+    UserSchema.pre('save', function (next) {
+        bcrypt.hash(this.password, 10)
         .then(hashed_pw => {
             this.password = hashed_pw;
             next();
@@ -37,8 +40,13 @@ UserSchema.pre('save', function (next) {
         .catch(function (errors) {
             console.log(errors)
         });
-});
-
+    });
+    
+    // UserSchema.virtual('isLocked').get(function() {
+    //     // check for future lockUntil timestamp
+    //     return !!(this.lockUntil && this.lockUntil > Date.now());
+    //     // Date.now = time in milliseconds value
+    // });
 
 mongoose.model('User', UserSchema);
 // var User = mongoose.model('User')

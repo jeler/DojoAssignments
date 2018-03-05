@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   RegError;
   LogError;
   PwError;
+  Lockout;
 
   ngOnInit()
   {
@@ -57,11 +58,19 @@ export class HomeComponent implements OnInit {
       let User = this._httpService.loginUser(this.UserLog);
       User.subscribe(data => {
         console.log(data);
-        if(data["err"] || data["pw_error"])
+        if(data["err"] || data["pw_error"] || data["lockout"])
         {
           this.LogError= data["err"]
           this.PwError = data["pw_error"]
-          // this._router.navigateByUrl("/")          
+          
+            if(data["lockout"] === true)
+            {
+              
+              this.Lockout = data["lockout"];
+              console.log(this.Lockout)
+              this._router.navigateByUrl("/")          
+            }
+          
         }
         else
         {

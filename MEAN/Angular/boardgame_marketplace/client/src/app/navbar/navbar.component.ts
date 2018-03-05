@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
-
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,13 +9,16 @@ import { HttpService } from '../http.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private _httpService: HttpService) { }
+  constructor(private _httpService: HttpService, private _router: Router) { }
 
   ngOnInit() {
   }
 
-  getUserInfo()
+  userLogout()
   {
-    // console.log(req.session._id);
+    let observable = this._httpService.userLogout();
+    observable.subscribe(data => console.log(data, "this is data!"))
+    this._router.navigateByUrl("/")          
+    
   }
 }

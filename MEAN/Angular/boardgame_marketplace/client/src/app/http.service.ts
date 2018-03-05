@@ -18,10 +18,14 @@ export class HttpService {
     return this._http.post('loginuser', UserLog)
     
   }
-  checkSessionUser(session_user)
+  checkSessionUser()
   {
-    console.log(session_user)
     console.log("in session check service!")
     return this._http.get('check_session')
+  }
+  userLogout()
+  {
+    console.log("here from nav bar!")
+    return this._http.get('logout')
   }
 }

@@ -1,33 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { FilterPipe }from '../filter.pipe';
 import { HttpService } from '../http.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
-
 @Component({
-  selector: 'app-user-dashboard',
-  templateUrl: './user-dashboard.component.html',
-  styleUrls: ['./user-dashboard.component.css']
+  selector: 'app-create-boardgame',
+  templateUrl: './create-boardgame.component.html',
+  styleUrls: ['./create-boardgame.component.css']
 })
-export class UserDashboardComponent implements OnInit {
-
-  constructor(private _httpService: HttpService, private _router: Router) { }
+export class CreateBoardgameComponent implements OnInit {
 
   user_info: any;
-
-  characters = [
-    'Finn the human',
-    'Jake the dog',
-    'Princess bubblegum',
-    'Lumpy Space Princess',
-    'Beemo1',
-    'Beemo2'
-  ]
-
-  ngOnInit() 
-  {
-
+  BoardGameCreate: any;
+  
+  constructor(private _httpService: HttpService, private _router: Router) { }
+  
+  ngOnInit() {
     this.checkSessionUserComponent()
+    this.BoardGameCreate= {
+        title: "",
+        description:"",
+        price: 0,
+        location: "",
+        condition: ""
+      }
   }
 
   checkSessionUserComponent()
@@ -49,5 +44,4 @@ export class UserDashboardComponent implements OnInit {
       }
     })
   }
-
 }

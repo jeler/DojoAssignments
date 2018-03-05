@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="col">
+    <form #createbgform="ngForm" (submit) = createNewBoardgame()>
+      <p>Title</p>
+      <input type="text" 
+      name="title" 
+      required
+      [(ngModel)]="BoardGameCreate.title"
+      #title ="ngModel"
+      >
+      <div class="error" *ngIf="!title.valid">Title is required!</div>  
+      <p><textarea rows="4" cols="50" 
+      name="description" 
+      required
+      maxlength="200"
+      [(ngModel)]="BoardGameCreate.description"
+      #title ="ngModel"
+      ></textarea></p>
+      <div class="error" *ngIf="!description.valid">Description is required!</div>
+      <br><br>
+      <input type="submit"[disabled]="!createbgform.form.valid">  
+    </form>
+
+  </div>
+</div>

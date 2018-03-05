@@ -25,7 +25,7 @@
                        <input type="submit"[disabled]="!registerform.form.valid">
                    </form>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6">     
             <h2>Login</h2>
             <form #loginform = "ngForm" (submit) = onLogin()>
                   <p>Email Address:</p>
@@ -37,7 +37,7 @@
                   <div class="error"*ngIf="!password.valid">You need to enter a password!</div>
                   <div class="error" *ngIf="PwError">{{PwError}}</div>
                   <br>
-                  <input type="submit" [disabled]="!loginform.form.valid">
+                  <input type="submit" [disabled] ="!loginform.form.valid">
             </form>
         </div>
     </div>

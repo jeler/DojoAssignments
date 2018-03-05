@@ -2,11 +2,11 @@
 <div class="search_bar">
   <input type="text" class="search" [(ngModel)]="searchText" placeholder="Search...">
   <br><br>
+  <h2>Welcome {{user_info?.first_name}}</h2>
   <ul>
     <li *ngFor="let c of characters | filter : searchText">
       {{c}}
     </li>
   </ul>
 </div>
-
 <router-outlet></router-outlet> 

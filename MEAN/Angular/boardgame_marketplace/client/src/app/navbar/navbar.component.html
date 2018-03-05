@@ -1,3 +1,9 @@
-<p>
-  navbar works!
-</p>
+<div class="row">
+  <div class="col-sm-1">
+    <button (click) = userLogout()>Logout</button> 
+  </div>
+  <div class="col-md-2">
+    <button [routerLink]="['/createboardgame']">Create New Listing!</button>    
+  </div>
+</div>
+<router-outlet></router-outlet>

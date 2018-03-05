@@ -18,10 +18,10 @@ function(app)
     app.route('/createnewuser')
     .post(user.createnewuser);
 
-    app.route('/logout')
-    .get();
-
     app.post('/loginuser', user.loginuser)
 
-    app.get('/check_session')
+    app.get('/logout', user.logout)
+
+    app.get('/check_session', user.checkSessionId)
+
 }

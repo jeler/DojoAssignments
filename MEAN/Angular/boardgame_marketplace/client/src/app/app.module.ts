@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FilterPipe }from './filter.pipe';
+import { CreateBoardgameComponent } from './create-boardgame/create-boardgame.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FilterPipe }from './filter.pipe';
     HomeComponent,
     UserDashboardComponent,
     NavbarComponent,
-    FilterPipe
+    FilterPipe,
+    CreateBoardgameComponent
   ],
   imports: [
     BrowserModule,

@@ -10,10 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt-as-promised": "^1.1.0",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "mongoose": "^5.0.4",
-    "bcrypt-as-promised": "^1.1.0"
+    "mongoose-account-locking": "0.0.1"
   }
 }
