@@ -105,7 +105,8 @@ namespace bright_ideas.Controllers {
                 int? Session = HttpContext.Session.GetInt32 ("session_id");
                 User RetrievedUser = _context.Users.SingleOrDefault (u => u.UserId == Session);
                 ViewBag.user = RetrievedUser;
-                List<Idea> AllIdeas = _context.Ideas.Include (r => r.Likes).ThenInclude (u => u.User).ToList ();
+                // List<Idea> AllIdeas = _context.Ideas.Include (r => r.Likes).ThenInclude (u => u.User).ToList ();
+                List<Idea> AllIdeas = _context.Ideas.Include (r => r.Creator).Include(l => l.Likes).ThenInclude (u => u.User).OrderByDescending(l=>l.Likes.Count).ToList();             
                 ViewBag.ideas = AllIdeas;
                 ModelState.AddModelError (string.Empty, "Idea needs to be longer than 3 characters!");
                 return View ("Dashboard");
