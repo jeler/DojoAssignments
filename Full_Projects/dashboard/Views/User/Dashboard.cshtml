@@ -1,0 +1,59 @@
+@model user_dashboard.Models.UserViewModels
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container">
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand">Test App</a>
+        <div class="navbar-nav">                   
+            <a class=" nav-link" href="/dashboard">Dashboard</a>
+        </div>
+        <div class="navbar-nav">
+            <a class="nav-link" href="users/show/@ViewBag.user.UserId">Profile</a>
+        </div>
+        <button class="navbar-text"><a href="/logout">Logout</a></button>
+    </nav>
+    <div class="row">
+        <div class="col-md-10">
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>created_at</th>
+                    <th>user_level</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            @foreach(var users in @ViewBag.AllUsers) 
+            {
+            <tbody>
+                <tr>
+                    <td>@users.UserId</td>
+                    <td><a href="/users/show/@users.UserId">@users.first_name @users.last_name</a></td>
+                    <td>@users.created_at.ToString("D")</td>
+                    @if(@users.user_level == 9) 
+                    {
+                        <td>admin</td>
+                    }
+                    else 
+                    {
+                        <td>normal</td>
+                    }
+                    @if(users.UserId == @ViewBag.user.UserId)
+                    {
+                        <td><a href="/users/edit">Edit</a></td>
+                    }
+                    else 
+                    {
+                        <td><a href="/users/show/@users.UserId">View</a></td>
+                    }
+                </tr>
+            </tbody>
+            }
+        </table>
+    </div>
+</div>
