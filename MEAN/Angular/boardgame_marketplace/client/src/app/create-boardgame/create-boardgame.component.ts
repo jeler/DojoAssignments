@@ -44,4 +44,14 @@ export class CreateBoardgameComponent implements OnInit {
       }
     })
   }
+  createNewBoardgame(BoardGameCreate)
+  {
+    let newGame = this._httpService.createBoardGame(this.BoardGameCreate)
+    .subscribe(data => {
+      console.log(data, "this is bg data from form!")
+    })
+    console.log(this.BoardGameCreate)
+    this._router.navigateByUrl("/dashboard")           
+  }
+
 }

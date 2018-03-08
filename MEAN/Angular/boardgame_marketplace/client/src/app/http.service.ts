@@ -28,4 +28,15 @@ export class HttpService {
     console.log("here from nav bar!")
     return this._http.get('logout')
   }
+  createBoardGame(BoardGameCreate)
+  {
+    console.log("here from component!", BoardGameCreate)
+    return this._http.post('creategame', BoardGameCreate)
+  }
+
+  getAllGames()
+  {
+    console.log("here in your base at 39!")
+    return this._http.get('findgames')
+  }
 }

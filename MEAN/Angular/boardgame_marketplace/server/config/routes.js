@@ -20,8 +20,13 @@ function(app)
 
     app.post('/loginuser', user.loginuser)
 
+    app.post('/creategame', boardgame.creategame)
+
     app.get('/logout', user.logout)
 
     app.get('/check_session', user.checkSessionId)
+
+    app.get('/findgames', boardgame.findgames)
+
 
 }

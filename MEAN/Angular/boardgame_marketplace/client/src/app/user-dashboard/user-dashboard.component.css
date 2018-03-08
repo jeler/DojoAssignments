@@ -14,3 +14,11 @@
     margin-right: 16px;
     font-size: 17px;
 } */
+
+.right {
+    /* padding-left: 100px; */
+    font-size: 16pt;
+}
+.game {
+    border: 2px solid black;
+}

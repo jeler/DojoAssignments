@@ -14,20 +14,14 @@ export class UserDashboardComponent implements OnInit {
   constructor(private _httpService: HttpService, private _router: Router) { }
 
   user_info: any;
-
-  characters = [
-    'Finn the human',
-    'Jake the dog',
-    'Princess bubblegum',
-    'Lumpy Space Princess',
-    'Beemo1',
-    'Beemo2'
-  ]
+  allGames: any;
+  session: any;
 
   ngOnInit() 
   {
 
-    this.checkSessionUserComponent()
+    // this.checkSessionUserComponent()
+    this.getGames();
   }
 
   checkSessionUserComponent()
@@ -45,8 +39,18 @@ export class UserDashboardComponent implements OnInit {
       {
         console.log("got here to give user data!")
         this.user_info = data["user"]
+        this.session = data["session"]
         console.log(this.user_info)
       }
+    })
+  }
+
+  getGames()
+  {
+    let allGames = this._httpService.getAllGames().subscribe(data => {
+      console.log(data, "all the data!")
+      this.allGames = data["games"];
+      console.log(this.allGames)
     })
   }
 
