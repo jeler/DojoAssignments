@@ -31,8 +31,6 @@ class UserController {
                     else {
                         req.session.user_id = user.id;
                         var session_user = req.session.user_id
-                        console.log(session_user, "this is session user!")
-                        console.log(req.session.user_id)
                         res.json({ message: "Successfully added user!" });
                     }
                 })
@@ -56,9 +54,6 @@ class UserController {
             {
             bcrypt.compare(req.body.password, user[0].password)
                 .then(same => {
-                    // var session_user = req.session.user[0]._id
-                    // console.log(session_user);
-                    console.log(user, "in compare password!")
                     console.log(user[0].id, "user id?");
                     req.session.user_id = user[0].id
                     var session_user = req.session.user_id
@@ -66,8 +61,6 @@ class UserController {
                     res.json({user: user, session_user: session_user});
                 })
                 .catch(function (err) {
-                    console.log(err);
-                    console.log("got here in catch!")
                     res.json({ pw_error: "Incorrect password!" })
                 })
             }
@@ -83,7 +76,6 @@ class UserController {
         console.log(req.session.user_id, "do you exist here?");
         // console.log(session_user)
         if (req.session.user_id === undefined) {
-            console.log(req.session.user_id)
             res.json({session: false})
         }
         else {
@@ -92,8 +84,6 @@ class UserController {
             if(user)
             {
                 
-                console.log(req.session.user_id, "session user at line 82")
-                console.log(user)
                 res.json({session: req.session.user_id, user:user});
             }
         })

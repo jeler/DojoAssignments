@@ -1,11 +1,11 @@
-<app-navbar></app-navbar>
-  <div class="container">
+<app-allboardgames></app-allboardgames>
+  <!-- <div class="container">
     <textarea rows="2" cols="75" class="search" [(ngModel)]="searchText" placeholder="Search..."></textarea>
     <br>
-    <h2>Welcome {{user_info?.first_name}}</h2>
+    <h2>Welcome {{user_info?.first_name}}</h2> -->
       <!-- <div [ngStyle]="{
         'background-color': 'grey'}"> -->
-      <div class="game" *ngFor="let games of allGames | filter:'title':searchText">
+      <!-- <div class="game" *ngFor="let games of allGames | filter:'title':searchText">
         <div class="row">
           <div class="col">
               <h2>{{games.title}}</h2>
@@ -23,5 +23,5 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 <router-outlet></router-outlet> 

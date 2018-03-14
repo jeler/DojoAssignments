@@ -28,5 +28,7 @@ function(app)
 
     app.get('/findgames', boardgame.findgames)
 
+    app.get('/delete/:id', boardgame.delete)
+
 
 }

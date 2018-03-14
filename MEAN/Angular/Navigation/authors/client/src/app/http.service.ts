@@ -28,7 +28,7 @@ export class HttpService {
     console.log("got here in updateAuthorInfo!", editAuthor)
     return this._http.post('/updateuser', editAuthor)
   }
-  deleteSpecificAuthor(id)
+  deleteAuthor(id)
   {
     console.log("in service")
     return this._http.get('/delete/' + id)

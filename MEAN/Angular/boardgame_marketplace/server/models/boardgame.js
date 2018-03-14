@@ -29,11 +29,8 @@ var BoardGameSchema = new mongoose.Schema({
 })
 
 
-mongoose.model('BoardGame', BoardGameSchema); // We are setting this Schema in our Models as 'User'
+mongoose.model('BoardGame', BoardGameSchema);
 
 mongoose.model("BoardGame")
-// module.exports = {
-//     BoardGame: BoardGame
-// }
 
 mongoose.Promise = global.Promise;

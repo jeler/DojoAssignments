@@ -10,6 +10,7 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { NavbarComponent } from './navbar/navbar.component';
 import { FilterPipe }from './filter.pipe';
 import { CreateBoardgameComponent } from './create-boardgame/create-boardgame.component';
+import { AllboardgamesComponent } from './allboardgames/allboardgames.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CreateBoardgameComponent } from './create-boardgame/create-boardgame.co
     UserDashboardComponent,
     NavbarComponent,
     FilterPipe,
-    CreateBoardgameComponent
+    CreateBoardgameComponent,
+    AllboardgamesComponent
   ],
   imports: [
     BrowserModule,

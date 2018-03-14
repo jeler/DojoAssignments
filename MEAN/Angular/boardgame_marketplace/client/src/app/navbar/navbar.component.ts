@@ -18,7 +18,6 @@ export class NavbarComponent implements OnInit {
   {
     let observable = this._httpService.userLogout();
     observable.subscribe(data => console.log(data, "this is data!"))
-    this._router.navigateByUrl("/")          
-    
+    this._router.navigateByUrl("/")            
   }
 }

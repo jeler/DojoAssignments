@@ -39,4 +39,10 @@ export class HttpService {
     console.log("here in your base at 39!")
     return this._http.get('findgames')
   }
+
+  deleteGame(id)
+  {
+    console.log("here in delete!", id)
+    return this._http.get('/delete/' + id)
+  }
 }

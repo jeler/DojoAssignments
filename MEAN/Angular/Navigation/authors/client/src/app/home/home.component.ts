@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
   }
   deleteSpecificAuthor(id) {
     console.log("got to line 32 in component!", id)
-    let observable = this._httpService.deleteSpecificAuthor(id);
+    let observable = this._httpService.deleteAuthor(id);
     observable.subscribe(data => {
       console.log("data from delete in component!", data);
       // this._router.navigateByUrl("/")

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from './http.service';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -8,8 +10,8 @@ import { HttpService } from './http.service';
 })
 
 export class AppComponent implements OnInit {
-  constructor(private _httpService: HttpService){}
-  // ngOnInit will run when the component is initialized, after the constructor method.
+  constructor(private _httpService: HttpService, private _router: Router){}
+
   ngOnInit(){
   }
 }
