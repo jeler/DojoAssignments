@@ -1,6 +1,39 @@
 .bikeoftheday {
     color:blue;
+    text-align: center;
 }
 .error {
     color: red;
+}
+.randomGame
+{
+    border: 2px solid black;
+    background: lightgrey;
+    margin: auto;
+}
+.h2
+{
+    margin: 0px;
+    padding: 0px;
+}
+.forms
+{
+    text-align: center;
+    display: inline-block;
+    
+}
+
+/* .register
+{
+    border: 2px solid black;    
+}
+
+.login
+{
+    border: 2px solid black;
+
+} */
+.separate
+{
+    margin-left: 20px;
 }

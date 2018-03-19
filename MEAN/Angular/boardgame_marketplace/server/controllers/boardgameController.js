@@ -63,6 +63,33 @@ class BoardGameController {
             }
         })
     }
+    random(req, res)
+    {
+        BoardGame.count().exec(function(err, count)
+        {
+            if(err)
+            {
+                console.log(err)
+            }
+            else{
+
+                var random = Math.floor(Math.random() * count)    
+            }
+            BoardGame.findOne().skip(random).exec(
+                function(err, result)
+                {
+                    if (err)
+                    {
+                        console.log(err)
+                    }
+                    else
+                    {
+                        res.json({result})
+                    }
+                }
+            )
+        })
+    }
 }
 
 module.exports = new BoardGameController

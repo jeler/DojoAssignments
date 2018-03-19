@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   LogError;
   PwError;
   Lockout;
+  random: any;
 
   ngOnInit()
   {
@@ -34,6 +35,7 @@ export class HomeComponent implements OnInit {
       email: "",
       password: ""
     }
+    this.getrandomGame();
   }
     onSubmit(UserReg)
     {
@@ -78,4 +80,15 @@ export class HomeComponent implements OnInit {
         }
       })
     }
+
+    getrandomGame()
+    {
+      let random = this._httpService.randomGame()
+      random.subscribe(data => {
+        console.log("this is data", data)
+        this.random = data["result"]
+        console.log(this.random);
+      })
+    }
+
   }

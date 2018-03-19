@@ -30,5 +30,7 @@ function(app)
 
     app.get('/delete/:id', boardgame.delete)
 
+    app.get('/random', boardgame.random)
+
 
 }

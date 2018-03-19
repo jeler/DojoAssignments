@@ -45,4 +45,9 @@ export class HttpService {
     console.log("here in delete!", id)
     return this._http.get('/delete/' + id)
   }
+  randomGame()
+  {
+    console.log("got here in randomgame")
+    return this._http.get('random')
+  }
 }

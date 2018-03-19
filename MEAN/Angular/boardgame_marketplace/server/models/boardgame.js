@@ -4,6 +4,9 @@ const mongoose = require("mongoose");
 
 var Schema = mongoose.Schema;
 
+// img path
+var imgPath = '../'
+
 var BoardGameSchema = new mongoose.Schema({
     title: 
     {
@@ -24,6 +27,11 @@ var BoardGameSchema = new mongoose.Schema({
     condition:
     {
         type: String, required: true
+    },
+
+    img:
+    {
+        data: Buffer, contentType: String
     },
     _user: {type: Schema.Types.ObjectId, ref: 'User'},
 })

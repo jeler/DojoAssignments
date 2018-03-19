@@ -1,0 +1,5 @@
+.navbar navbar-expand-lg navbar-light bg-light {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
