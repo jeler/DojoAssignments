@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <h2 class="bikeoftheday">Boardgame of the day!</h2>
         <div class="randomGame col-8" >
-            <div class="row">
+            <div class="row justify-content-between">
                 <div class="col-9">
                     <h2>{{random?.title}}</h2>
                     <p>{{random?.description}}</p>
@@ -16,39 +16,79 @@
         <br><br>
     <div class="col forms">
         <div class= "row">
-            <div class="col-2-sm register">
-                <form #registerform="ngForm" (submit) = onSubmit()>
-                        <p>Email Address:
-                        <input type="text" 
-                        name="UserReg.email" required [(ngModel)]="UserReg.email" #email ="ngModel" /> </p> 
-                        <p>First Name:
-                        <input type="text" name="UserReg.first_name" [(ngModel)]="UserReg.first_name" required minlength="2" #firstname ="ngModel"/></p>
-                        <div class="error"*ngIf="!firstname.valid && firstname.touched">First name must contain 2 characters!</div> 
-                        <p>Last Name:
-                        <input type="text" name="UserReg.last_name" [(ngModel)]="UserReg.last_name"  required minlength="2" #lastname="ngModel"/></p>
-                        <div class="error"*ngIf="!lastname.valid && lastname.touched">Last name must contain 2 characters!</div>  
-                        <p>Password:
-                        <input type="password" name="UserReg.password" [(ngModel)]="UserReg.password" #password="ngModel" required minlength="8"/></p>
-                        <div class="error"*ngIf="!password.valid">Password contain at least 8 characters!</div>        
-                        <p>Password Confirmation
-                        <input type="password" name="UserReg.password_confirm" [(ngModel)]="UserReg.password_confirm" /></p> 
-                        <div class="error" *ngIf="UserReg.password != UserReg.password_confirm">Passwords do not match!</div>
-                        <input type="submit"[disabled]="!registerform.form.valid" class="btn btn-success" value="Register">
+            <div class="col-md-6 justify-content-center">
+                <div class="col-2-sm register">
+                    <form #registerform="ngForm" (submit) = onSubmit()>
+                        <div class="form-group row my-2">
+                            <label for="email_reg" class="col-sm-4 col-form-label text-right">Email</label>
+                            <div class="col-sm-8">         
+                                <input type="text" 
+                                name="UserReg.email" required [(ngModel)]="UserReg.email" #email ="ngModel" class="col-md-12"/>
+                                <div class="error"*ngIf="!email.valid && email  .touched">Email is not valid!</div> 
+                            </div>
+                        </div>
+                        <div class="form-group row my-2">
+                            <label for="first_name" class="col-sm-4 col-form-label text-right">First Name</label>
+                            <div class="col-sm-8"> 
+                                <input type="text" name="UserReg.first_name" [(ngModel)]="UserReg.first_name" required minlength="2" #firstname ="ngModel" class="col-md-12"/>
+                                <div class="error"*ngIf="!firstname.valid && firstname.touched">First name must contain 2 characters!</div>
+                            </div>                            
+                        </div>
+                        <div class="form-group row my-2">
+                            <label for="last_name" class="col-sm-4 col-form-label text-right">Last Name</label>
+                            <div class="col-sm-8">
+                                <input type="text" name="UserReg.last_name" [(ngModel)]="UserReg.last_name"  required minlength="2" #lastname="ngModel" class="col-md-12"/>
+                                <div class="error"*ngIf="!lastname.valid && lastname.touched">Last name must contain 2 characters!</div>
+                            </div>
+                        </div>   
+                        <div class="form-group row my-2">
+                            <label for="password_reg" class="col-sm-4 col-form-label text-right">Password</label>
+                            <div class="col-sm-8"> 
+                                <input type="password" name="UserReg.password" [(ngModel)]="UserReg.password" #passwordreg="ngModel" required minlength="8" class="col-md-12"/>
+                                <div class="error"*ngIf="!passwordreg.valid && passwordreg.touched">Password must contain at least 8 characters!</div>  
+                            </div>   
+                        </div>   
+                        <div class="form-group row my-2">
+                            <label for="pw_confirm" class="col-sm-4 col-form-label text-right">Password Confirmation</label>
+                            <div class="col-sm-8"> 
+                                <input type="password" name="UserReg.password_confirm" [(ngModel)]="UserReg.password_confirm" class="col-md-12" #passwordconfirm="ngModel"/>
+                                <div class="error" *ngIf="UserReg.password != UserReg.password_confirm">Passwords do not match!</div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-end my-2">
+                            <div class="col-sm-3 mr-3">
+                                <input type="submit"[disabled]="!registerform.form.valid" class="btn btn-success" value="Register">
+                            </div>
+                        </div>
                     </form>
+                </div>
             </div>
-            <div class="col-10-sm login">     
-                <form #loginform = "ngForm" (submit) = onLogin()>
-                    <p>Email Address:</p>
-                    <input type="email" name="UserLog.email" [(ngModel)]="UserLog.email" required #logemail="ngModel" >
-                    <div class="error"*ngIf="!logemail.valid && logemail.touched">You need to enter an email!</div>
-                    <div class="error" *ngIf="LogError">{{LogError}}</div>
-                    <p>Password:</p>
-                    <input type="password" name="UserLog.password" [(ngModel)]="UserLog.password" #password="ngModel"required>
-                    <div class="error"*ngIf="!password.valid &&password.touched">You need to enter a password!</div>
-                    <div class="error" *ngIf="PwError">{{PwError}}</div>
-                    <br>
-                    <input type="submit" [disabled] ="!loginform.form.valid">
-                </form>
+            <div class="col-md-6 justify-content-center"> 
+                <div class="col-2-sm login">     
+                    <form #loginform = "ngForm" (submit) = onLogin()>
+                        <div class="form-group row my-2"> 
+                            <label for="email_reg" class="col-sm-4 col-form-label text-right">Email</label>
+                            <div class="col-sm-8">                   
+                                <input type="email" name="UserLog.email" [(ngModel)]="UserLog.email" required #logemail="ngModel" class="col-md-12">
+                                <div class="error"*ngIf="!logemail.valid && logemail.touched">You need to enter an email!</div>
+                                <div class="error" *ngIf="LogError">{{LogError}}</div>
+                            </div>
+                        </div>     
+                        <div class="form-group row my-2"> 
+                            <label for="password_reg" class="col-sm-4 col-form-label text-right">Password</label>
+                            <div class="col-sm-8"> 
+                                <input type="password" name="UserLog.password" [(ngModel)]="UserLog.password" #passwordlog="ngModel"required class="col-md-12">
+                                <div class="error" *ngIf="!passwordlog.valid &&passwordlog.touched">You need to enter a password!</div>
+                                <div class="error" *ngIf="PwError">{{PwError}}</div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-end my-2">
+                            <div class="col-sm-3 mr-3">
+                                <input class="btn btn-primary" type="submit" [disabled] ="!loginform.form.valid" value="Login">
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
